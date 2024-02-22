@@ -27,6 +27,7 @@ export default function HomePage() {
           <div className="prose text-center">
             <h2>אלכס קוביצה</h2>
             <div className="prose text-center">מייסד יש.לי.</div>
+            <div className="prose text-center">רוצים גם עמוד? צרו קשר.</div>
           </div>
           <div className="flex flex-wrap gap-4 justify-center pb-4">
             <IconButton
@@ -77,6 +78,9 @@ export default function HomePage() {
             משרות ב-monday.com
             <br />
             ניתן להגיש קורות חיים דרכי בכל אחת מהרשתות החברתיות
+          </LinkButton>
+          <LinkButton url="https://www.linkedin.com/posts/alexkubica_the-30-most-common-software-engineer-behavioral-activity-7042481956399292419-ufyY?utm_source=share&utm_medium=member_desktop">
+            מתראיינים למשרת פיתוח? הפוסט הזה בשבילכם 🫵
           </LinkButton>
           <LinkButton url="https://www.facebook.com/groups/hagapetot">
             קבוצת הג׳פטות בפייסבוק - בינה מלאכותית
