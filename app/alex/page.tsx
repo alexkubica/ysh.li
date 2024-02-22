@@ -127,7 +127,7 @@ export default function HomePage() {
             אתר וויקס לאותנטיקס ישראל
           </LinkButton>
           <LinkButton url="https://www.spatial.io/s/Art-Gallery-by-Diana-Later-63e951b0de17b1be4948ef18?share=4910015432438267508">
-            גלריית מטאברס ל-DL'Art
+            גלריית מטאברס ל-DL`Art
           </LinkButton>
           <LinkButton url="http://wemakegpts.live/">
             wemakegpts.live - הזמנת GPT מותאמת אישית
