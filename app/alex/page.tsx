@@ -17,7 +17,7 @@ import LinkButton from "../componenets/LinkButton";
 export default function HomePage() {
   return (
     <>
-      <div className="flex flex-col min-h-screen justify-between text-white text-center">
+      <div className="flex flex-col justify-between text-white text-center">
         <div className="flex flex-col items-center p-4 space-y-8">
           <div className="avatar">
             <div className="mt-8 w-32 rounded-2xl">
@@ -154,16 +154,6 @@ export default function HomePage() {
             דואלינגו
           </LinkButton>
         </div>
-
-        <footer className="footer footer-center p-8 ">
-          <aside>
-            <p>
-              <Link className="link" href="https://ysh.li/alex">
-                אלכס קוביצה - מייסד יש.לי © 2024 ysh.li
-              </Link>
-            </p>
-          </aside>
-        </footer>
       </div>
     </>
   );

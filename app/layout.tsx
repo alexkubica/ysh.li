@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Head from "next/head";
 import Script from "next/script";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "יש.לי - עמוד אישי לביו שלך",
@@ -48,7 +49,18 @@ export default function RootLayout({
             className="hidden invisible"
           ></iframe>
         </noscript>
-        <div className="max-w-screen-md mx-auto">{children}</div>
+        <div className="max-w-screen-md mx-auto min-h-screen flex flex-col justify-between ">
+          {children}
+          <footer className="footer footer-center p-8 ">
+            <aside>
+              <p>
+                <Link className="link" href="/">
+                  יש.לי - ysh.li
+                </Link>
+              </p>
+            </aside>
+          </footer>
+        </div>
       </body>
     </html>
   );
