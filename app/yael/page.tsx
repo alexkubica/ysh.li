@@ -1,23 +1,13 @@
-import {
-  IconBrandFacebook,
-  IconBrandInstagram,
-  IconBrandLinkedin,
-  IconBrandTelegram,
-  IconBrandThreads,
-  IconBrandTiktok,
-  IconBrandWhatsapp,
-  IconBrandX,
-  IconBrandYoutube,
-  IconMail,
-} from "@tabler/icons-react";
-import Link from "next/link";
-import IconButton from "../componenets/IconButton";
-import LinkButton from "../componenets/LinkButton";
+import Footer from "../components/Footer";
+import LinkButton from "../components/LinkButton";
 
 export default function HomePage() {
   return (
-    <>
-      <div className="flex flex-col justify-between text-white text-center">
+    <div
+      data-theme="yael"
+      className="min-h-screen flex flex-col justify-between"
+    >
+      <div className="flex flex-col justify-between text-white text-center max-w-screen-md mx-auto container">
         <div className="flex flex-col items-center p-4 space-y-8">
           <div className="avatar">
             <div className="mt-8 w-32 rounded-2xl">
@@ -40,6 +30,7 @@ export default function HomePage() {
           </LinkButton>
         </div>
       </div>
-    </>
+      <Footer />
+    </div>
   );
 }

@@ -14,7 +14,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="he" dir="rtl" data-theme="snc">
+    <html lang="he" dir="rtl">
       <Head>
         <link rel="icon" href="/images/logo.png" type="image/png" />
       </Head>
@@ -49,18 +49,7 @@ export default function RootLayout({
             className="hidden invisible"
           ></iframe>
         </noscript>
-        <div className="max-w-screen-md mx-auto min-h-screen flex flex-col justify-between ">
-          {children}
-          <footer className="footer footer-center p-8 ">
-            <aside>
-              <p>
-                <Link className="link" href="/">
-                  יש.לי - ysh.li
-                </Link>
-              </p>
-            </aside>
-          </footer>
-        </div>
+        {children}
       </body>
     </html>
   );
