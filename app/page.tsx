@@ -35,6 +35,7 @@ export default function HomePage() {
           </div>
 
           <LinkButton url="/alex">אלכס קוביצה - מייסד יש.לי</LinkButton>
+          <LinkButton url="/nextjs">קהילת ה-Next.js של אלכס קוביצה</LinkButton>
           <LinkButton url="/yael">יעל מלינה</LinkButton>
           <LinkButton url="/liam">ליאם</LinkButton>
         </div>

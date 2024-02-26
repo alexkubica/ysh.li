@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
-import "./globals.css";
 import Head from "next/head";
 import Script from "next/script";
-import Link from "next/link";
+import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "יש.לי - עמוד אישי לביו שלך",
+  title: "יש.לי",
 };
 
 export default function RootLayout({
