@@ -38,7 +38,7 @@ export default function HomePage() {
           <LinkButton url="https://youtube.com/@Master_ninja15?si=4ispn2soCAmmqQnI">
             יוטיוב
           </LinkButton>
-          <LinkButton url="https://discord.gg/t5PV4gXN">דיסקורד</LinkButton>
+          <LinkButton url="https://discord.gg/ADsruYg8Zp">דיסקורד</LinkButton>
         </div>
       </div>
       <Footer />
