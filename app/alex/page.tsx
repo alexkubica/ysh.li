@@ -79,7 +79,7 @@ export default function HomePage() {
             אותנטיקס ישראל - צילום | תוכן | סושיאל | תדמית
           </LinkButton>
 
-          <LinkButton url="http://bit.ly/next-wa">
+          <LinkButton url="/nextjs">
             הצטרפו למעל 300 החברים בקהילת הווטסאפ של Next.js!
           </LinkButton>
 

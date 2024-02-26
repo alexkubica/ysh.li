@@ -28,6 +28,9 @@ export default function HomePage() {
           <LinkButton url="https://chat.whatsapp.com/Krydq44nLVW7eLresa2eer">
             קבוצת הווטסאפ שלנו
           </LinkButton>
+          <div className="prose text-center pt-4">
+            <h4>שותפים</h4>
+          </div>
           <LinkButton url="https://www.facebook.com/groups/300186154930810">
             קבוצת הפייסבוק Next.js Israel
           </LinkButton>
