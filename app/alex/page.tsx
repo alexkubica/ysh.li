@@ -13,6 +13,12 @@ import {
 import IconButton from "../components/IconButton";
 import LinkButton from "../components/LinkButton";
 import Footer from "../components/Footer";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "יש.לי - אלכס קוביצה",
+  // description: "...",
+};
 
 export default function HomePage() {
   return (
@@ -30,7 +36,7 @@ export default function HomePage() {
           <div className="prose text-center">
             <h2>אלכס קוביצה</h2>
             <div className="prose text-center">מייסד יש.לי.</div>
-            <div className="prose text-center">רוצים גם עמוד? צרו קשר.</div>
+            <div className="prose text-center">צרו קשר להזמנת עמוד משלכם.</div>
           </div>
           <div className="flex flex-wrap gap-4 justify-center pb-4">
             <IconButton

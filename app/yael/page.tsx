@@ -1,5 +1,10 @@
+import { Metadata } from "next";
 import Footer from "../components/Footer";
 import LinkButton from "../components/LinkButton";
+
+export const metadata: Metadata = {
+  title: "יש.לי - יעל מלינה",
+};
 
 export default function HomePage() {
   return (
