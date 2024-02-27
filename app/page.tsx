@@ -26,12 +26,17 @@ export default function HomePage() {
               עמוד אישי עם כל הקישורים בלינק אחד לביו!
             </div> */}
             <div className="prose text-center">
-              צרו קשר עם אלכס קוביצה להזמנת עמוד משלכם.
+            
             </div>
           </div>
 
           <div className="prose text-center pt-4">
-            <h4>העמודים שלנו</h4>
+
+  <LinkButton url="https://wa.me/972526350655?text=%D7%94%D7%99%D7%99!%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%A0%D7%99%D7%99%D7%9F/%D7%AA%20%D7%91%D7%A2%D7%9E%D7%95%D7%93%20%D7%B4%D7%99%D7%A9.%D7%9C%D7%99%D7%B4%20%F0%9F%98%81">הזמינו עמוד ״יש.לי״ משלכם בחינם לזמן מוגבל!</LinkButton>
+
+          <LinkButton url="https://t.me/yshlinews">חדשות ישראל בטלגרם</LinkButton>
+
+            <h4 className="pt-4">העמודים שלנו</h4>
           </div>
 
           <LinkButton url="/alex">אלכס קוביצה - מייסד יש.לי</LinkButton>
