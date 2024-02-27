@@ -38,10 +38,13 @@ export default function HomePage() {
             חדשות ישראל בטלגרם
           </LinkButton>
 
-          <h4 className="pt-4">העמודים שלנו</h4>
+          <div className="prose ">
+            <h4 className="pt-4">העמודים שלנו</h4>
+          </div>
 
           <LinkButton url="/alex">אלכס קוביצה - מייסד יש.לי</LinkButton>
           <LinkButton url="/nextjs">קהילת ה-Next.js של אלכס קוביצה</LinkButton>
+          <LinkButton url="/ofek">🧞‍♂️ 💎 הזוג המשוגע 💎 🧞‍♂️</LinkButton>
           <LinkButton url="/yael">יעל מלינה</LinkButton>
           <LinkButton url="/liam">ליאם</LinkButton>
         </div>

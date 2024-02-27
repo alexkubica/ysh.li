@@ -36,8 +36,13 @@ export default function HomePage() {
           <div className="prose text-center">
             <h2>אלכס קוביצה</h2>
             <div className="prose text-center">מייסד יש.לי.</div>
-            <div className="prose text-center">
-              צרו קשר להזמנת עמוד &quot;יש.לי&quot; משלכם.
+            <div className="prose text-center pt-4">
+              <LinkButton
+                // btnType="accent"
+                url="https://wa.me/972526350655?text=%D7%94%D7%99%D7%99!%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%A0%D7%99%D7%99%D7%9F/%D7%AA%20%D7%91%D7%A2%D7%9E%D7%95%D7%93%20%D7%B4%D7%99%D7%A9.%D7%9C%D7%99%D7%B4%20:)"
+              >
+                הזמינו עמוד ״יש.לי״ משלכם בחינם לזמן מוגבל!
+              </LinkButton>
             </div>
           </div>
           <div className="flex flex-wrap gap-4 justify-center pb-4">
