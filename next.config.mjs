@@ -2,11 +2,12 @@
 const nextConfig = {
   redirects: async () => {
     return [
-      // {
-      //   source: "/",
-      //   destination: "/alex",
-      //   permanent: false,
-      // },
+      {
+        source: "/mario",
+        destination: "https://mario-kart-3-js.vercel.app",
+        permanent: false,
+        basePath: false,
+      },
     ];
   },
 };
