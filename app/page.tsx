@@ -34,6 +34,10 @@ export default function HomePage() {
           </LinkButton>
 
    
+          <div className="prose ">
+            <h4 className="pt-4">העמודים שלנו 🪪</h4>
+          </div>
+     
 
           <LinkButton url="/alex">אלכס קוביצה - מייסד יש.לי 🤩</LinkButton>
           <LinkButton url="/nextjs">קהילת מפתחי Next.js 👨🏻‍💻</LinkButton>
@@ -49,10 +53,8 @@ export default function HomePage() {
             חדשות ישראל בטלגרם 🗞️
           </LinkButton>
 
-          <div className="prose ">
-            <h4 className="pt-4">העמודים שלנו 🪪</h4>
-          </div>
-        </div>
+   </div>
+
         <Footer />
       </div>
     </div>
