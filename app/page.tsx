@@ -33,7 +33,19 @@ export default function HomePage() {
             הזמינו עמוד ״יש.לי״ משלכם 🫵
           </LinkButton>
 
+   
           <div className="prose ">
+            <h4 className="pt-4">העמודים שלנו 🪪</h4>
+          </div>
+     
+
+          <LinkButton url="/alex">אלכס קוביצה - מייסד יש.לי 🤩</LinkButton>
+          <LinkButton url="/nextjs">קהילת מפתחי Next.js 👨🏻‍💻</LinkButton>
+          <LinkButton url="/ofek">🧞‍♂️ 💎 הזוג המשוגע 💎 🧞‍♂️</LinkButton>
+          <LinkButton url="/yael">יעל מלינה 🌹</LinkButton>
+          <LinkButton url="/liam">ליאם 👑</LinkButton>
+
+       <div className="prose ">
             <h4 className="pt-4">מיוחדים 🤯</h4>
           </div>
           <LinkButton url="/mario">שחקו מריו קארט מהדפדפן 🎮</LinkButton>
@@ -41,16 +53,8 @@ export default function HomePage() {
             חדשות ישראל בטלגרם 🗞️
           </LinkButton>
 
-          <div className="prose ">
-            <h4 className="pt-4">העמודים שלנו 🪪</h4>
-          </div>
+   </div>
 
-          <LinkButton url="/alex">אלכס קוביצה - מייסד יש.לי 🤩</LinkButton>
-          <LinkButton url="/nextjs">קהילת מפתחי Next.js 👨🏻‍💻</LinkButton>
-          <LinkButton url="/ofek">🧞‍♂️ 💎 הזוג המשוגע 💎 🧞‍♂️</LinkButton>
-          <LinkButton url="/yael">יעל מלינה 🌹</LinkButton>
-          <LinkButton url="/liam">ליאם 👑</LinkButton>
-        </div>
         <Footer />
       </div>
     </div>
