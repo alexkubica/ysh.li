@@ -14,6 +14,9 @@ export default function HomePage() {
         <meta property="fc:frame" content="vNext" />
         <meta property="fc:frame:image" content={trollImage} />
         <meta property="og:image" content={trollImage} />
+        <meta property="fc:frame:post_url" content="https://example.com/api" />
+
+        <meta property="fc:frame:button:1" content="You've been trolled!" />
       </head>
       <div className="h-screen w-screen">
         <img src={trollImage} className="h-full w-full object-cover" />
