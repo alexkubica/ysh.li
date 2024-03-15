@@ -1,21 +1,16 @@
 import {
-  IconBrandFacebook,
-  IconBrandInstagram,
   IconBrandLinkedin,
   IconBrandTelegram,
   IconBrandThreads,
-  IconBrandTiktok,
-  IconBrandWhatsapp,
   IconBrandX,
-  IconBrandYoutube,
   IconMail,
 } from "@tabler/icons-react";
+import { Metadata } from "next";
+import Footer from "../../components/Footer";
 import IconButton from "../../components/IconButton";
 import LinkButton from "../../components/LinkButton";
-import Footer from "../../components/Footer";
-import { Metadata } from "next";
 
-export function getBaseUrl() {
+function getBaseUrl() {
   return process.env.NEXT_PUBLIC_URL;
 }
 
