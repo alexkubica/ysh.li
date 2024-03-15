@@ -8,6 +8,12 @@ const nextConfig = {
         permanent: false,
         basePath: false,
       },
+      {
+        source: "/alex/mail",
+        destination: "mailto:me@alexkubica.com",
+        permanent: false,
+        basePath: false,
+      },
     ];
   },
 };

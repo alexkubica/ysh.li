@@ -15,18 +15,19 @@ const pages = [
         <meta property="fc:frame:button:2:action" content="link" />
         <meta property="fc:frame:button:2:target" content="https://t.me/alexkubica" />
 
-        <meta property="fc:frame:button:3" content="Mail" />
+        <meta property="fc:frame:button:3" content="Linkedin" />
         <meta property="fc:frame:button:3:action" content="link" />
-        <meta property="fc:frame:button:3:target" content="mailto:me@alexkubica.com" />
+        <meta property="fc:frame:button:3:target" content="https://www.linkedin.com/in/alexkubica/" />
 
         <meta property="fc:frame:button:4" content="➡️️" />
   `,
   `
         <meta property="fc:frame:post_url" content="${process.env.NEXT_PUBLIC_URL}/alex/fc/0" />
 
-        <meta property="fc:frame:button:1" content="Linkedin" />
+
+        <meta property="fc:frame:button:1" content="Mail" />
         <meta property="fc:frame:button:1:action" content="link" />
-        <meta property="fc:frame:button:1:target" content="https://www.linkedin.com/in/alexkubica/" />
+        <meta property="fc:frame:button:1:target" content="${process.env.NEXT_PUBLIC_URL}/alex/mail" />
 
         <meta property="fc:frame:button:2" content="Threads" />
         <meta property="fc:frame:button:2:action" content="link" />
