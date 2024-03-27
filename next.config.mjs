@@ -3,6 +3,12 @@ const nextConfig = {
   redirects: async () => {
     return [
       {
+        source: "/a",
+        destination: "https://alexkubica.com",
+        permanent: false,
+        basePath: false,
+      },
+      {
         source: "/mario",
         destination: "https://mario-kart-3-js.vercel.app",
         permanent: false,
