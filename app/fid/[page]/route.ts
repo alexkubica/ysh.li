@@ -7,7 +7,8 @@ type Params = {
 
 export async function POST(request: NextRequest, context: { params: Params }) {
   // @ts-ignore
-  const { fid } = request.body?.untrustedData ?? {};
+  const body = await request.json();
+  const { fid } = body?.untrustedData ?? -1;
 
   return new NextResponse(`
     <!DOCTYPE html>
