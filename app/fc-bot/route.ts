@@ -11,13 +11,13 @@ export async function GET(req: Request) {
     method: "POST",
     url: "https://api.neynar.com/v2/farcaster/cast",
     data: {
-      signer_uuid: "a66fb991-9261-424f-b521-c3f6847f300d",
+      signer_uuid: process.env.NEYNAR_SIGNER_UUID,
       text: "hi! i'm a bot 🫡",
       parent: body?.data?.parent_url,
     },
     headers: {
       accept: "application/json",
-      api_key: "54A2E250-288E-4090-A888-4668DC442AD7",
+      api_key: process.env.NEYNAR_API_KEY,
       "content-type": "application/json",
     },
   };
