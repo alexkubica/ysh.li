@@ -23,6 +23,14 @@ export async function POST(req: Request) {
 
   const cast_hash = body?.data?.hash;
   const cast_author_fid = body?.data?.author?.fid;
+  const text = body?.data?.text;
+
+  console.log("test if !attack south", { cast_hash, cast_author_fid, text });
+
+  if (!text?.includes("!attack south")) {
+    console.log("not !attack south", { cast_hash, cast_author_fid, text });
+    return new NextResponse("not !attack south", { status: 403 });
+  }
 
   const kvId = "tipped-" + cast_author_fid;
   const tipped = (await kv.get<boolean>(kvId)) ?? false;
