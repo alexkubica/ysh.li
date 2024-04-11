@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 import { kv } from "@vercel/kv";
 
 export async function POST(req: Request) {
-  console.log("entered /fc-bot POST route");
+  console.log("entered /fc-bot POST route", req.headers);
 
   // todo fix this to only allow neynar webhook
 
