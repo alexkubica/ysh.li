@@ -1,7 +1,9 @@
 import axios from "axios";
 import { NextResponse } from "next/server";
 
-export async function GET(req: Request) {
+export async function POST(req: Request) {
+  console.log("entered /fc-bot POST route");
+
   // @ts-ignore
   const body = await req.json();
 
