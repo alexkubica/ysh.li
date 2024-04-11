@@ -3,6 +3,13 @@ import { NextResponse } from "next/server";
 import { kv } from "@vercel/kv";
 
 export async function POST(req: Request) {
+  console.log("request url", req.url);
+
+  if (!req.url.startsWith("https://dev.neynar.com") === false) {
+    console.log("not neynar webhook", req.url);
+    return new NextResponse("not neynar webhook", { status: 403 });
+  }
+
   console.log("entered /fc-bot POST route");
 
   // @ts-ignore
