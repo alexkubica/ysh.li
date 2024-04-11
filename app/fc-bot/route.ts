@@ -9,13 +9,15 @@ export async function POST(req: Request) {
 
   console.log("webhook body:", body);
 
+  const parent_url = body?.data?.parent_url;
+
   const options = {
     method: "POST",
     url: "https://api.neynar.com/v2/farcaster/cast",
     data: {
       signer_uuid: process.env.NEYNAR_SIGNER_UUID,
       text: "hi! i'm a bot 🫡",
-      parent: body?.data?.parent_url,
+      parent: parent_url,
     },
     headers: {
       accept: "application/json",
@@ -24,14 +26,14 @@ export async function POST(req: Request) {
     },
   };
 
-  axios
-    .request(options)
-    .then(function (response) {
-      console.log(response.data);
-    })
-    .catch(function (error) {
-      console.error(error);
-    });
+  console.log("reply casting to: ", parent_url, options);
+
+  try {
+    const response = await axios.request(options);
+    console.log(response.data);
+  } catch (error) {
+    console.error(error);
+  }
 
   return new NextResponse("done");
 }
