@@ -27,23 +27,27 @@ export async function POST(req: Request) {
 
   console.log("test if !attack south", { cast_hash, cast_author_fid, text });
 
-  if (!text?.includes("!attack south")) {
+  if (!text?.includes("!attack south") && !text?.includes("!attack north")) {
     console.log("not !attack south", { cast_hash, cast_author_fid, text });
-    return new NextResponse("not !attack south");
+    return new NextResponse("not !attack south or !attack north");
   }
 
-  const kvId = "tipped-" + cast_author_fid;
-  const tipped = (await kv.get<boolean>(kvId)) ?? false;
+  const kvId = "replied-" + cast_author_fid;
+  const replied = (await kv.get<boolean>(kvId)) ?? false;
 
-  console.log(`tipped?`, { cast_author_fid, tipped });
+  console.log(`replied?`, { cast_author_fid, tipped: replied });
 
-  if (!tipped) {
+  if (!replied) {
+    const replyCastText = text?.includes("!attack south")
+      ? "Thank you for support the /northern-army 🫡\n18 $DEGEN by /ak"
+      : "no $DEGEN for you\n💩💩💩";
+
     const options = {
       method: "POST",
       url: "https://api.neynar.com/v2/farcaster/cast",
       data: {
         signer_uuid: process.env.NEYNAR_SIGNER_UUID,
-        text: "Thank you for support the /northern-army 🫡\n18 $DEGEN by /ak",
+        text: replyCastText,
         parent: cast_hash,
       },
       headers: {
@@ -62,14 +66,14 @@ export async function POST(req: Request) {
       console.error(error);
     }
 
-    console.log("axios done, set tipped");
+    console.log("axios done, set replied");
 
     // set tipped for 12h
     const result = await kv.set<boolean>(kvId, true, { ex: 60 * 60 * 12 });
 
-    console.log("set tipped", { result, kvId });
+    console.log("set replied", { result, kvId });
   } else {
-    console.log("skip tipping", { cast_author_fid, tipped });
+    console.log("skip replying", { cast_author_fid, tipped: replied });
   }
 
   return new NextResponse("done");
