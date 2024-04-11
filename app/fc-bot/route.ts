@@ -35,7 +35,7 @@ export async function POST(req: Request) {
   const kvId = "replied-" + cast_author_fid;
   const replied = (await kv.get<boolean>(kvId)) ?? false;
 
-  console.log(`replied?`, { cast_author_fid, tipped: replied });
+  console.log(`replied?`, { cast_author_fid, replied, kvId });
 
   if (!replied) {
     const replyCastText = text?.includes("!attack south")
@@ -68,7 +68,7 @@ export async function POST(req: Request) {
 
     console.log("axios done, set replied");
 
-    // set tipped for 12h
+    // cache replied for 12h
     const result = await kv.set<boolean>(kvId, true, { ex: 60 * 60 * 12 });
 
     console.log("set replied", { result, kvId });
