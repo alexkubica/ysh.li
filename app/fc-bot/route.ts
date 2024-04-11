@@ -4,20 +4,9 @@ import { kv } from "@vercel/kv";
 import { createHmac } from "crypto";
 
 export async function POST(req: Request) {
-  console.log("entered /fc-bot POST route", req.headers);
+  // console.log("entered /fc-bot POST route", req.headers);
 
-  // todo fix this to only allow neynar webhook
-
-  /*
-  console.log("request url", req.url);
-
-  if (!req.url.startsWith("https://dev.neynar.com")) {
-    console.log("not neynar webhook", req.url);
-    return new NextResponse("not neynar webhook", { status: 403 });
-  }
-  */
-
-  console.log("validating webhook signature");
+  // console.log("validating webhook signature");
 
   // @ts-ignore
   const body = await req.json();
@@ -33,7 +22,7 @@ export async function POST(req: Request) {
     throw new Error("Neynar signature missing from request headers");
   }
 
-  console.log("got x-neynar-signature", sig);
+  // console.log("got x-neynar-signature", sig);
 
   const webhookSecret = process.env.NEYNAR_WEBHOOK_SECRET;
   if (!webhookSecret) {
@@ -42,19 +31,19 @@ export async function POST(req: Request) {
     );
   }
 
-  console.log("create hmac with webhook secret");
+  // console.log("create hmac with webhook secret");
 
   const hmac = createHmac("sha512", webhookSecret);
 
-  console.log("add text body to hmac");
+  // console.log("add text body to hmac");
 
   hmac.update(JSON.stringify(body));
 
-  console.log("digest hmac hex");
+  // console.log("digest hmac hex");
 
   const generatedSignature = hmac.digest("hex");
 
-  console.log("compare sigs", { sig, generatedSignature });
+  // console.log("compare sigs", { sig, generatedSignature });
 
   const isValid = generatedSignature === sig;
   if (!isValid) {
@@ -63,23 +52,23 @@ export async function POST(req: Request) {
     return new NextResponse("Invalid webhook signature");
   }
 
-  console.log("sig valid, parse text body as json");
+  // console.log("sig valid, parse text body as json");
 
   const cast_hash = body?.data?.hash;
   const cast_author_fid = body?.data?.author?.fid;
   const text = body?.data?.text;
 
-  console.log("test if !attack south", { cast_hash, cast_author_fid, text });
+  // console.log("test if !attack", { cast_hash, cast_author_fid, text });
 
   if (!text?.includes("!attack south") && !text?.includes("!attack north")) {
-    console.log("not !attack south", { cast_hash, cast_author_fid, text });
-    return new NextResponse("not !attack south or !attack north");
+    console.log("not !attack", { cast_hash, cast_author_fid, text });
+    return new NextResponse("not !attack");
   }
 
   const kvId = "replied-" + cast_author_fid;
   const replied = (await kv.get<boolean>(kvId)) ?? false;
 
-  console.log(`replied?`, { cast_author_fid, replied, kvId });
+  console.log(`replied to user before?`, { cast_author_fid, replied, kvId });
 
   if (!replied) {
     const replyCastText = text?.includes("!attack south")
@@ -101,21 +90,21 @@ export async function POST(req: Request) {
       },
     };
 
-    console.log("reply casting to: ", cast_hash);
+    // console.log("reply casting");
 
     try {
       const response = await axios.request(options);
-      console.log(response.data);
+      console.log("cast success", response.data);
     } catch (error) {
-      console.error(error);
+      console.error("cast error", error);
     }
 
-    console.log("axios done, set replied");
+    // console.log("axios done, set replied");
 
     // cache replied for 12h
     const result = await kv.set<boolean>(kvId, true, { ex: 60 * 60 * 12 });
 
-    console.log("set replied", { result, kvId });
+    // console.log("set replied", { result, kvId });
   } else {
     console.log("skip replying", { cast_author_fid, replied });
   }
