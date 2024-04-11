@@ -73,7 +73,7 @@ export async function POST(req: Request) {
 
     console.log("set replied", { result, kvId });
   } else {
-    console.log("skip replying", { cast_author_fid, tipped: replied });
+    console.log("skip replying", { cast_author_fid, replied });
   }
 
   return new NextResponse("done");
