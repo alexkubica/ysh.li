@@ -1,6 +1,7 @@
 import axios from "axios";
 import { NextResponse } from "next/server";
 import { kv } from "@vercel/kv";
+import { createHmac } from "crypto";
 
 export async function POST(req: Request) {
   console.log("entered /fc-bot POST route", req.headers);
@@ -16,9 +17,37 @@ export async function POST(req: Request) {
   }
   */
 
+  console.log("validating webhook signature");
+
+  // @ts-ignore
+  const textBody = await req.text();
+
+  const sig = req.headers.get("X-Neynar-Signature");
+  if (!sig) {
+    console.log("Neynar signature missing from request headers", { textBody });
+    throw new Error("Neynar signature missing from request headers");
+  }
+
+  const webhookSecret = process.env.NEYNAR_WEBHOOK_SECRET;
+  if (!webhookSecret) {
+    throw new Error(
+      "Make sure you set NEYNAR_WEBHOOK_SECRET in your .env file",
+    );
+  }
+
+  const hmac = createHmac("sha512", webhookSecret);
+  hmac.update(textBody);
+
+  const generatedSignature = hmac.digest("hex");
+
+  const isValid = generatedSignature === sig;
+  if (!isValid) {
+    console.log("Invalid webhook signature", { sig, generatedSignature });
+    throw new Error("Invalid webhook signature");
+  }
+
   // @ts-ignore
   const body = await req.json();
-
   console.log("webhook body:", body);
 
   const cast_hash = body?.data?.hash;
