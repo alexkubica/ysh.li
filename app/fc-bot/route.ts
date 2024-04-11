@@ -22,11 +22,16 @@ export async function POST(req: Request) {
   // @ts-ignore
   const textBody = await req.text();
 
+  console.log("got text body", textBody);
+
   const sig = req.headers.get("X-Neynar-Signature");
+
   if (!sig) {
     console.log("Neynar signature missing from request headers", { textBody });
     throw new Error("Neynar signature missing from request headers");
   }
+
+  console.log("got x-neynar-signature", sig);
 
   const webhookSecret = process.env.NEYNAR_WEBHOOK_SECRET;
   if (!webhookSecret) {
@@ -35,10 +40,19 @@ export async function POST(req: Request) {
     );
   }
 
+  console.log("create hmac with webhook secret");
+
   const hmac = createHmac("sha512", webhookSecret);
+
+  console.log("add text body to hmac");
+
   hmac.update(textBody);
 
+  console.log("digest hmac hex");
+
   const generatedSignature = hmac.digest("hex");
+
+  console.log("compare sigs", { sig, generatedSignature });
 
   const isValid = generatedSignature === sig;
   if (!isValid) {
@@ -46,9 +60,11 @@ export async function POST(req: Request) {
     throw new Error("Invalid webhook signature");
   }
 
-  // @ts-ignore
-  const body = await req.json();
-  console.log("webhook body:", body);
+  console.log("sig valid, parse text body as json");
+
+  const body = JSON.parse(textBody);
+
+  console.log("webhook parsed body", body);
 
   const cast_hash = body?.data?.hash;
   const cast_author_fid = body?.data?.author?.fid;
