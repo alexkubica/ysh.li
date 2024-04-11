@@ -29,7 +29,7 @@ export async function POST(req: Request) {
 
   if (!text?.includes("!attack south")) {
     console.log("not !attack south", { cast_hash, cast_author_fid, text });
-    return new NextResponse("not !attack south", { status: 403 });
+    return new NextResponse("not !attack south");
   }
 
   const kvId = "tipped-" + cast_author_fid;
