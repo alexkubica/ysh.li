@@ -9,7 +9,7 @@ export async function POST(req: Request) {
 
   console.log("webhook body:", body);
 
-  const parent_url = body?.data?.parent_url;
+  const cast_hash = body?.data?.hash;
 
   const options = {
     method: "POST",
@@ -17,7 +17,7 @@ export async function POST(req: Request) {
     data: {
       signer_uuid: process.env.NEYNAR_SIGNER_UUID,
       text: "hi! i'm a bot 🫡",
-      parent: parent_url,
+      parent: cast_hash,
     },
     headers: {
       accept: "application/json",
@@ -26,7 +26,7 @@ export async function POST(req: Request) {
     },
   };
 
-  console.log("reply casting to: ", parent_url);
+  console.log("reply casting to: ", cast_hash);
 
   try {
     const response = await axios.request(options);
