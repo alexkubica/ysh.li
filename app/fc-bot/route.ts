@@ -48,7 +48,7 @@ export async function POST(req: Request) {
 
   console.log("add text body to hmac");
 
-  hmac.update(body);
+  hmac.update(JSON.stringify(body));
 
   console.log("digest hmac hex");
 
