@@ -3,14 +3,18 @@ import { NextResponse } from "next/server";
 import { kv } from "@vercel/kv";
 
 export async function POST(req: Request) {
+  console.log("entered /fc-bot POST route");
+
+  // todo fix this to only allow neynar webhook
+
+  /*
   console.log("request url", req.url);
 
-  if (!req.url.startsWith("https://dev.neynar.com") === false) {
+  if (!req.url.startsWith("https://dev.neynar.com")) {
     console.log("not neynar webhook", req.url);
     return new NextResponse("not neynar webhook", { status: 403 });
   }
-
-  console.log("entered /fc-bot POST route");
+  */
 
   // @ts-ignore
   const body = await req.json();
@@ -53,7 +57,9 @@ export async function POST(req: Request) {
     console.log("axios done, set tipped");
 
     // set tipped for 12h
-    await kv.set<boolean>(kvId, true, { ex: 60 * 60 * 12 });
+    const result = await kv.set<boolean>(kvId, true, { ex: 60 * 60 * 12 });
+
+    console.log("set tipped", { result, kvId });
   } else {
     console.log("skip tipping", { cast_author_fid, tipped });
   }
