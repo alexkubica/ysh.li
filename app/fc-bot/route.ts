@@ -104,7 +104,7 @@ export async function POST(req: Request) {
     // cache replied for 12h
     const result = await kv.set<boolean>(kvId, true, { ex: 60 * 60 * 12 });
 
-    // console.log("set replied", { result, kvId });
+    console.log("set replied", { result, kvId });
   } else {
     console.log("skip replying", { cast_author_fid, replied });
   }
