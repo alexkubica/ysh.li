@@ -26,7 +26,7 @@ export async function POST(req: Request) {
     },
   };
 
-  console.log("reply casting to: ", parent_url, options);
+  console.log("reply casting to: ", parent_url);
 
   try {
     const response = await axios.request(options);
@@ -34,6 +34,8 @@ export async function POST(req: Request) {
   } catch (error) {
     console.error(error);
   }
+
+  console.log("axios done");
 
   return new NextResponse("done");
 }
