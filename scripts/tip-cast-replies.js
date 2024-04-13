@@ -33,7 +33,8 @@ async function writeFile(filePath, data) {
 }
 
 const castToTip = process.argv[2] ?? "https://warpcast.com/alexk/0x68cb568b";
-console.log("castToTip", castToTip);
+const amountToTip = process.argv[3] ?? 18;
+console.log({ castToTip, amountToTip });
 
 const options = {
   method: "GET",
@@ -79,9 +80,11 @@ axios
 
     const directReplies = response.data.conversation.cast.direct_replies.filter(
       (r) => {
-        // console.log("r.author.fid", r.author.fid, storedDB[r.author.fid]);
+        console.log("r.author.fid", r);
         return (
-          r.author.fid !== 14879 && !storedDB[castToTip + "-" + r.author.fid]
+          r.author.fid !== 14879 &&
+          !storedDB[castToTip + "-" + r.author.fid] &&
+          r.replies.count === 0
         );
       },
     );
@@ -91,7 +94,11 @@ axios
     for (let i = 0; i < directReplies.length; i++) {
       const r = directReplies[i];
       console.log("tipping user", r.author.fid);
-      await cast({ text: "Tipped 18 $DEGEN by /ak 🫡", parent: r.hash });
+      const suffix = i % 2 === 0 ? "🫡" : "🫶";
+      await cast({
+        text: `Tipped ${amountToTip} $DEGEN by /ak ${suffix}`,
+        parent: r.hash,
+      });
 
       console.log("saving to db", r.author.fid);
       storedDB[castToTip + "-" + r.author.fid] = true;
