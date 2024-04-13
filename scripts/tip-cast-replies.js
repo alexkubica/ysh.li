@@ -15,7 +15,7 @@ try {
   console.log("db file not found, will create it");
 }
 
-console.log({ storedDB });
+// console.log({ storedDB });
 
 console.log("making api request...");
 
@@ -32,7 +32,8 @@ async function writeFile(filePath, data) {
   }
 }
 
-const castToTip = "https://warpcast.com/alexk/0x68cb568b";
+const castToTip = process.argv[2] ?? "https://warpcast.com/alexk/0x68cb568b";
+console.log("castToTip", castToTip);
 
 const options = {
   method: "GET",
@@ -76,7 +77,35 @@ axios
       response.data.conversation.cast.direct_replies[0].direct_replies,
     );
 
-    /*
+    const directReplies = response.data.conversation.cast.direct_replies.filter(
+      (r) => {
+        // console.log("r.author.fid", r.author.fid, storedDB[r.author.fid]);
+        return (
+          r.author.fid !== 14879 && !storedDB[castToTip + "-" + r.author.fid]
+        );
+      },
+    );
+
+    // console.log(directReplies);
+
+    for (let i = 0; i < directReplies.length; i++) {
+      const r = directReplies[i];
+      console.log("tipping user", r.author.fid);
+      await cast({ text: "Tipped 18 $DEGEN by /ak 🫡", parent: r.hash });
+
+      console.log("saving to db", r.author.fid);
+      storedDB[castToTip + "-" + r.author.fid] = true;
+      await writeFile(fileName, JSON.stringify(storedDB));
+
+      console.log("wait 1 sec");
+      await sleep(1000);
+    }
+  })
+  .catch(function (error) {
+    console.error(error);
+  });
+
+/*
     [
   {
     object: 'cast',
@@ -144,29 +173,3 @@ axios
   }
 ]
 */
-
-    const directReplies = response.data.conversation.cast.direct_replies.filter(
-      (r) => {
-        // console.log("r.author.fid", r.author.fid, storedDB[r.author.fid]);
-        return r.author.fid !== 14879 && !storedDB[r.author.fid];
-      },
-    );
-
-    // console.log(directReplies);
-
-    for (let i = 0; i < directReplies.length; i++) {
-      const r = directReplies[i];
-      console.log("tipping user", r.author.fid);
-      await cast({ text: "Tipped 18 $DEGEN by /ak 🫡", parent: r.hash });
-
-      console.log("saving to db", r.author.fid);
-      storedDB[r.author.fid] = true;
-      await writeFile(fileName, JSON.stringify(storedDB));
-
-      console.log("wait 1 sec");
-      await sleep(1000);
-    }
-  })
-  .catch(function (error) {
-    console.error(error);
-  });
