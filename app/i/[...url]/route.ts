@@ -22,7 +22,7 @@ export async function GET(request: Request, context: { params: Params }) {
                 <meta property="fc:frame" content="vNext" />
                 <meta property="fc:frame:image" content="${url}" />
 
-                <meta property="fc:frame:button:1" content="ysh.li/fc-pic/IMAGE_URL, made by @alexk" />
+                <meta property="fc:frame:button:1" content="ysh.li/i/IMAGE_URL, made by @alexk" />
                 <meta property="fc:frame:button:1:action" content="link" />
                 <meta property="fc:frame:button:1:target" content="https://alexkubica.com" />
             </head>
