@@ -17,14 +17,13 @@ try {
 
 // console.log({ storedDB });
 
-console.log("making api request...");
-
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 async function writeFile(filePath, data) {
   try {
+    console.log("writing to file");
     await fs.writeFile(filePath, data);
     console.log("File written successfully");
   } catch (err) {
@@ -32,15 +31,28 @@ async function writeFile(filePath, data) {
   }
 }
 
-const castToTip = process.argv[2] ?? "https://warpcast.com/alexk/0x68cb568b";
-const amountToTip = process.argv[3] ?? 18;
-console.log({ castToTip, amountToTip });
+const amountToTip = process.argv[2] ?? 18;
 
-const options = {
-  method: "GET",
-  url: `https://api.neynar.com/v2/farcaster/cast/conversation?identifier=${encodeURIComponent(castToTip)}&type=url&reply_depth=1&include_chronological_parent_casts=true`,
-  headers: { accept: "application/json", api_key: "NEYNAR_API_DOCS" },
-};
+const castsToTip = [
+  "https://warpcast.com/alexk/0x6e93e248",
+  "https://warpcast.com/alexk/0x1bb92d93",
+  "https://warpcast.com/alexk/0x282169e3",
+  "https://warpcast.com/alexk/0x60c11267",
+  "https://warpcast.com/alexk/0x5c79e298",
+  "https://warpcast.com/alexk/0x1df0615e",
+  "https://warpcast.com/alexk/0x0e953efe",
+  "https://warpcast.com/alexk/0x91ef0d0c",
+  "https://warpcast.com/alexk/0x0b648157",
+  "https://warpcast.com/alexk/0xf5f72144",
+  "https://warpcast.com/alexk/0x5a9266f9",
+  "https://warpcast.com/alexk/0xb01d92f9",
+  "https://warpcast.com/alexk/0x07a68269",
+  "https://warpcast.com/alexk/0x5f9817f1",
+  "https://warpcast.com/alexk/0x5c79e298",
+  "",
+];
+
+console.log({ castsToTip, amountToTip });
 
 async function cast(data) {
   const options = {
@@ -69,48 +81,66 @@ async function cast(data) {
   }
 }
 
-axios
-  .request(options)
-  .then(async function (response) {
-    // console.log(response.data);
-    console.log(response.data.conversation.cast.direct_replies);
-    console.log(
-      response.data.conversation.cast.direct_replies[0].direct_replies,
-    );
+(async function () {
+  for (let i = 0; i < castsToTip.length; i++) {
+    const castToTip = castsToTip[i];
 
-    const directReplies = response.data.conversation.cast.direct_replies.filter(
-      (r) => {
-        console.log("r.author.fid", r);
-        return (
-          r.author.fid !== 14879 &&
-          !storedDB[castToTip + "-" + r.author.fid] &&
-          r.replies.count === 0
-        );
-      },
-    );
+    const options = {
+      method: "GET",
+      url: `https://api.neynar.com/v2/farcaster/cast/conversation?identifier=${encodeURIComponent(castToTip)}&type=url&reply_depth=1&include_chronological_parent_casts=true`,
+      headers: { accept: "application/json", api_key: "NEYNAR_API_DOCS" },
+    };
 
-    // console.log(directReplies);
+    await axios
+      .request(options)
+      .then(async function (response) {
+        // console.log(response.data);
+        // console.log(response.data.conversation.cast.direct_replies);
+        // console.log(
+        //   response.data.conversation.cast.direct_replies[0].direct_replies,
+        // );
 
-    for (let i = 0; i < directReplies.length; i++) {
-      const r = directReplies[i];
-      console.log("tipping user", r.author.fid);
-      const suffix = i % 2 === 0 ? "🫡" : "🫶";
-      await cast({
-        text: `Tipped ${amountToTip} $DEGEN by /ak ${suffix}`,
-        parent: r.hash,
+        const directReplies =
+          response.data.conversation.cast.direct_replies.filter((r) => {
+            const shouldTip =
+              r.author.fid !== 14879 &&
+              !storedDB[castToTip + "-" + r.author.fid] &&
+              r.replies.count === 0;
+
+            const replyUrl = `https://warpcast.com/${r.author.username}/${r.hash.slice(0, 10)}`;
+            console.log("check tip?", {
+              replyUrl,
+              fid: r.author.fid,
+              shouldTip,
+            });
+
+            return shouldTip;
+          });
+
+        // console.log(directReplies);
+
+        for (let i = 0; i < directReplies.length; i++) {
+          const r = directReplies[i];
+          const replyUrl = `https://warpcast.com/${r.author.username}/${r.hash.slice(0, 10)}`;
+          console.log("tipping user", { fid: r.author.fid, replyUrl });
+          const suffix = i % 2 === 0 ? "🫡" : "🫶";
+          await cast({
+            text: `Tipped ${amountToTip} $DEGEN by /ak ${suffix}`,
+            parent: r.hash,
+          });
+
+          storedDB[castToTip + "-" + r.author.fid] = true;
+          await writeFile(fileName, JSON.stringify(storedDB));
+
+          console.log("wait 3 sec");
+          await sleep(3000);
+        }
+      })
+      .catch(function (error) {
+        console.error(error);
       });
-
-      console.log("saving to db", r.author.fid);
-      storedDB[castToTip + "-" + r.author.fid] = true;
-      await writeFile(fileName, JSON.stringify(storedDB));
-
-      console.log("wait 1 sec");
-      await sleep(1000);
-    }
-  })
-  .catch(function (error) {
-    console.error(error);
-  });
+  }
+})();
 
 /*
     [

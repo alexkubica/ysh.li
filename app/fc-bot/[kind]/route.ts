@@ -47,7 +47,10 @@ interface WebhookData {
   };
 }
 
-async function getValidatedBody(req: Request): Promise<WebhookData> {
+async function getValidatedBody(
+  req: Request,
+  kind: string,
+): Promise<WebhookData> {
   // console.log("validating webhook signature");
 
   // @ts-ignore
@@ -66,7 +69,7 @@ async function getValidatedBody(req: Request): Promise<WebhookData> {
 
   // console.log("got x-neynar-signature", sig);
 
-  const webhookSecret = process.env.NEYNAR_WEBHOOK_SECRET;
+  const webhookSecret = process.env["NEYNAR_WEBHOOK_SECRET_" + kind];
   if (!webhookSecret) {
     throw new Error(
       "Make sure you set NEYNAR_WEBHOOK_SECRET in your .env file",
@@ -173,7 +176,7 @@ async function handleFarcastles(body: WebhookData) {
 }
 
 async function handleGame(body: WebhookData) {
-  if (!body.data.parent_url.endsWith("alexk/0x13183040")) {
+  if (!body.data.parent_url.endsWith("alexk/0x886f667e")) {
     console.log("not whitelisted cast", {
       parent_url: body.data.parent_url,
     });
@@ -215,17 +218,17 @@ export async function POST(req: Request, context: { params: Params }) {
 
   let body: WebhookData;
   try {
-    body = await getValidatedBody(req);
+    body = await getValidatedBody(req, context.params.kind);
   } catch (error) {
     return new NextResponse("error validating body");
   }
 
   let res: NextResponse;
   switch (context.params.kind) {
-    case "farcastles":
+    case "FARCASTLES":
       res = await handleFarcastles(body);
       break;
-    case "ak-game":
+    case "AK_GAME":
       res = await handleGame(body);
       break;
     default:
