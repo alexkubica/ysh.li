@@ -19,9 +19,11 @@ export async function GET(request: Request, context: { params: Params }) {
     <!DOCTYPE html>
         <html>
             <head>
+                <title>Image Proxy Frame</title>
+                <meta property="fc:frame:post_url" content="${process.env.NEXT_PUBLIC_URL}/alex/fc/0" />
                 <meta property="og:image" content="${url}" />
-                <meta property="fc:frame" content="vNext" />
                 <meta property="fc:frame:image" content="${url}" />
+                <meta property="fc:frame" content="vNext" />
 
                 <meta property="fc:frame:button:1" content="To use cast: https://ysh.li/i/IMAGE_URL, made by @alexk" />
                 <meta property="fc:frame:button:1:action" content="link" />
