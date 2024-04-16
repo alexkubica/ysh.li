@@ -13,6 +13,7 @@
     "**/*": "prettier --write --ignore-unknown"
   },
   "dependencies": {
+    "@moralisweb3/next": "^2.25.4",
     "@tabler/icons-react": "^2.47.0",
     "@vercel/kv": "^1.0.1",
     "axios": "^1.6.8",

@@ -3,9 +3,9 @@ import Moralis from "moralis";
 
 export async function GET(req: Request) {
   return NextResponse.json({
-    name: "$DEGEN price",
+    name: "Get $DEGEN to $USD price",
     icon: "pulse",
-    description: "Get $DEGEN's current price in USD",
+    description: "Get $DEGEN's current price in $USD. By /ak NAKAMA ◕ ◡ ◕",
     aboutUrl: "https://alexkubica.com",
     postUrl: "https://ysh.li/degen",
     action: {
@@ -16,9 +16,12 @@ export async function GET(req: Request) {
 }
 
 export async function POST(req: Request) {
-  await Moralis.start({
-    apiKey: process.env.MORALIS_API_KEY,
-  });
+  if (!Moralis.Core.isStarted) {
+    console.log("starting moralis");
+    await Moralis.start({
+      apiKey: process.env.MORALIS_API_KEY,
+    });
+  }
 
   const response = await Moralis.EvmApi.token.getTokenPrice({
     chain: "0x2105",
@@ -28,6 +31,8 @@ export async function POST(req: Request) {
   const price = Number.parseFloat(
     response?.raw?.usdPriceFormatted ?? "99999",
   ).toFixed(3);
+
+  console.log("$DEGEN price is $" + price + ". By /ak NAKAMA ◕ ◡ ◕");
 
   return NextResponse.json({
     message: "$DEGEN price is $" + price,
