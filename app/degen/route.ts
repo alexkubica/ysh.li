@@ -35,6 +35,6 @@ export async function POST(req: Request) {
   console.log("$DEGEN price is $" + price + ". By /ak NAKAMA ◕ ◡ ◕");
 
   return NextResponse.json({
-    message: "$DEGEN price is $" + price,
+    message: "$DEGEN price is $" + price + ". By /ak NAKAMA ◕ ◡ ◕",
   });
 }
