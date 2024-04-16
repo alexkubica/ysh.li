@@ -3,9 +3,9 @@ import Moralis from "moralis";
 
 export async function GET(req: Request) {
   return NextResponse.json({
-    name: "Get $DEGEN to $USD price",
+    name: "1 $DEGEN = $?",
     icon: "pulse",
-    description: "Get $DEGEN's current price in $USD. By /ak NAKAMA ◕ ◡ ◕",
+    description: "Get $DEGEN's current price in $USD. By /ak.",
     aboutUrl: "https://alexkubica.com",
     postUrl: "https://ysh.li/degen",
     action: {
@@ -32,9 +32,9 @@ export async function POST(req: Request) {
     response?.raw?.usdPriceFormatted ?? "99999",
   ).toFixed(3);
 
-  console.log("$DEGEN price is $" + price + ". By /ak NAKAMA ◕ ◡ ◕");
+  console.log("1 $DEGEN = $" + price + ". /ak");
 
   return NextResponse.json({
-    message: "$DEGEN price is $" + price + ". By /ak NAKAMA ◕ ◡ ◕",
+    message: "1 $DEGEN = $" + price + ". /ak",
   });
 }
