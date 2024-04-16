@@ -33,12 +33,7 @@ async function writeFile(filePath, data) {
 
 const amountToTip = process.argv[2] ?? 18;
 
-const castsToTip = [
-  "https://warpcast.com/alexk/0x80f7cb40",
-  "https://warpcast.com/alexk/0x1ec80f46",
-  "https://warpcast.com/alexk/0x27e350d0",
-  "https://warpcast.com/alexk/0x014bacef",
-];
+const castsToTip = ["https://warpcast.com/alexk/0x76a2162f"];
 
 console.log({ castsToTip, amountToTip });
 
@@ -112,6 +107,7 @@ async function cast(data) {
           const replyUrl = `https://warpcast.com/${r.author.username}/${r.hash.slice(0, 10)}`;
           console.log("tipping user", { fid: r.author.fid, replyUrl });
           await cast({
+            // text: `🍖 x ${amountToTip} by /ak NAKAMA ◕ ◡ ◕`,
             text: `${amountToTip} $DEGEN by /ak NAKAMA ◕ ◡ ◕`,
             parent: r.hash,
           });
