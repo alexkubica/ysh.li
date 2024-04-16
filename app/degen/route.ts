@@ -25,7 +25,9 @@ export async function POST(req: Request) {
     address: "0x4ed4E862860beD51a9570b96d89aF5E1B0Efefed",
   });
 
-  const price = Number.parseFloat(response.raw.usdPriceFormatted).toFixed(3);
+  const price = Number.parseFloat(
+    response?.raw?.usdPriceFormatted ?? "99999",
+  ).toFixed(3);
 
   return NextResponse.json({
     message: "$DEGEN price is $" + price,
