@@ -34,22 +34,10 @@ async function writeFile(filePath, data) {
 const amountToTip = process.argv[2] ?? 18;
 
 const castsToTip = [
-  "https://warpcast.com/alexk/0x6e93e248",
-  "https://warpcast.com/alexk/0x1bb92d93",
-  "https://warpcast.com/alexk/0x282169e3",
-  "https://warpcast.com/alexk/0x60c11267",
-  "https://warpcast.com/alexk/0x5c79e298",
-  "https://warpcast.com/alexk/0x1df0615e",
-  "https://warpcast.com/alexk/0x0e953efe",
-  "https://warpcast.com/alexk/0x91ef0d0c",
-  "https://warpcast.com/alexk/0x0b648157",
-  "https://warpcast.com/alexk/0xf5f72144",
-  "https://warpcast.com/alexk/0x5a9266f9",
-  "https://warpcast.com/alexk/0xb01d92f9",
-  "https://warpcast.com/alexk/0x07a68269",
-  "https://warpcast.com/alexk/0x5f9817f1",
-  "https://warpcast.com/alexk/0x5c79e298",
-  "",
+  "https://warpcast.com/alexk/0x80f7cb40",
+  "https://warpcast.com/alexk/0x1ec80f46",
+  "https://warpcast.com/alexk/0x27e350d0",
+  "https://warpcast.com/alexk/0x014bacef",
 ];
 
 console.log({ castsToTip, amountToTip });
@@ -123,17 +111,16 @@ async function cast(data) {
           const r = directReplies[i];
           const replyUrl = `https://warpcast.com/${r.author.username}/${r.hash.slice(0, 10)}`;
           console.log("tipping user", { fid: r.author.fid, replyUrl });
-          const suffix = i % 2 === 0 ? "🫡" : "🫶";
           await cast({
-            text: `Tipped ${amountToTip} $DEGEN by /ak ${suffix}`,
+            text: `${amountToTip} $DEGEN by /ak NAKAMA ◕ ◡ ◕`,
             parent: r.hash,
           });
 
           storedDB[castToTip + "-" + r.author.fid] = true;
           await writeFile(fileName, JSON.stringify(storedDB));
 
-          console.log("wait 3 sec");
-          await sleep(3000);
+          console.log("wait 0.5 sec");
+          await sleep(500);
         }
       })
       .catch(function (error) {

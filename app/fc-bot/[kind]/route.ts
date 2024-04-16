@@ -2,6 +2,7 @@ import axios from "axios";
 import { NextResponse } from "next/server";
 import { kv } from "@vercel/kv";
 import { createHmac } from "crypto";
+import GraphemeSplitter from "grapheme-splitter";
 
 type Params = {
   kind: string;
@@ -14,7 +15,7 @@ interface WebhookData {
     object: string;
     hash: string;
     thread_hash: string;
-    parent_hash: null;
+    parent_hash?: string;
     parent_url: string;
     root_parent_url: string;
     parent_author: {
@@ -176,11 +177,15 @@ async function handleFarcastles(body: WebhookData) {
 }
 
 async function handleGame(body: WebhookData) {
-  if (!body.data.parent_url.endsWith("alexk/0x886f667e")) {
-    console.log("not whitelisted cast", {
-      parent_url: body.data.parent_url,
+  const AK_GAME_CAST_HASH = process.env.AK_GAME_CAST_HASH;
+  if (
+    AK_GAME_CAST_HASH === null &&
+    !body.data.parent_hash?.startsWith(AK_GAME_CAST_HASH)
+  ) {
+    console.log("not the game cast", {
+      AK_GAME_CAST_HASH,
     });
-    return new NextResponse("not whitelisted cast");
+    return new NextResponse("not the game cast");
   }
 
   const text = body.data.text;
@@ -189,26 +194,44 @@ async function handleGame(body: WebhookData) {
 
   const kvId = "ak-game-" + cast_author_fid;
   const replied = (await kv.get<boolean>(kvId)) ?? false;
+  const foundEmojiId = "ak-game-emoji-found";
+  const foundEmoji = (await kv.get<boolean>(foundEmojiId)) ?? false;
+
+  const splitter = new GraphemeSplitter();
+  const [firstEmoji] = splitter.splitGraphemes(text);
+  const secretEmoji = process.env.AK_GAME_SECRET_EMOJI;
+
+  if (foundEmoji) {
+    console.log(`already found emoji`, { cast_author_fid, replied, kvId });
+    return new NextResponse("emoji already found");
+  }
 
   console.log(`replied to user before?`, { cast_author_fid, replied, kvId });
 
-  if (!replied) {
-    let replyCastText: string;
-    if (text === "🫡") {
-      replyCastText = "You found the secret emoji!";
-    } else {
-      replyCastText = "Not the secret emoji! Try again in 24 hours.";
-    }
-
-    await cast({ text: replyCastText, parent: cast_hash });
-
-    // cache replied for 24h
-    const result = await kv.set<boolean>(kvId, true, { ex: 60 * 60 * 24 });
-
-    console.log("set replied", { result, kvId });
-  } else {
+  if (replied) {
     console.log("skip replying", { cast_author_fid, replied });
+    return new NextResponse("already replied to user");
   }
+
+  let replyCastText: string;
+  if (firstEmoji === secretEmoji) {
+    replyCastText =
+      "You found the secret emoji! Quote cast & tag @alexk to claim your prize.";
+
+    // cache replied for 1h
+    const result = await kv.set<boolean>(foundEmojiId, true);
+    console.log("set found emoji in cache", { result, foundEmojiId });
+  } else {
+    replyCastText =
+      "Not the secret emoji! Try again in 1 hour. 10 $DEGEN by /ak NAKAMA ◕ ◡ ◕";
+  }
+
+  await cast({ text: replyCastText, parent: cast_hash });
+
+  // cache replied for 1h
+  const result = await kv.set<boolean>(kvId, true, { ex: 60 * 60 });
+
+  console.log("set replied", { result, kvId });
 
   return new NextResponse("done");
 }
