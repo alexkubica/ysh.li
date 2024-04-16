@@ -17,9 +17,9 @@ export async function GET(req: Request) {
 
 export async function POST(req: Request) {
   const emoji = emojiSDK.random();
-  console.log("generating random emoji", { emoji });
+  console.log("generating random emoji", emoji);
 
   return NextResponse.json({
-    message: "Your random emoji is: " + emoji + ". /ak",
+    message: `Your random emoji is: ${emoji.emoji} (${emoji.name}). /ak`,
   });
 }
