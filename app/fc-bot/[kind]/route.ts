@@ -207,6 +207,19 @@ async function handleDegen(body: WebhookData) {
     return new NextResponse("not /ak degen");
   }
 
+  const kvId = "/ak degen fid " + cast_author_fid;
+  let replied = false;
+  if (cast_author_fid !== 14879) {
+    replied = (await kv.get<boolean>(kvId)) ?? false;
+  } else {
+    console.log("skip replied check for @alexk", { cast_author_fid });
+  }
+
+  if (replied) {
+    console.log("skip replying", { cast_author_fid, replied });
+    return new NextResponse("already replied to user");
+  }
+
   console.log("/ak degen", { cast_hash, cast_author_fid, text });
 
   const degenAllowance = await getDegenAllowance(cast_author_fid);
@@ -216,6 +229,14 @@ async function handleDegen(body: WebhookData) {
 Follow /ak and @alexk ⚡️`,
     parent: cast_hash,
   });
+
+  if (cast_author_fid !== 14879) {
+    // cache replied for 1h
+    const result = await kv.set<boolean>(kvId, true, { ex: 60 * 60 });
+    console.log("set replied", { result, kvId });
+  } else {
+    console.log("skip replied cache  for @alexk", { cast_author_fid });
+  }
 
   return new NextResponse("done");
 }
