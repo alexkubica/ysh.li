@@ -29,8 +29,8 @@ export async function POST(req: Request) {
   });
 
   const price = Number.parseFloat(
-    response?.raw?.usdPriceFormatted ?? "99999",
-  ).toFixed(3);
+    Number.parseFloat(response?.raw?.usdPriceFormatted ?? "99999").toFixed(3),
+  );
 
   console.log("1 $DEGEN = $" + price + ". /ak");
 

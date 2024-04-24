@@ -1,8 +1,8 @@
 require("dotenv").config({
   path: [".env.local", ".env", ".env.development.local"],
 });
+const _ = require("lodash");
 const axios = require("axios");
-
 const fs = require("fs/promises");
 
 const fileName = "db.json";
@@ -33,7 +33,7 @@ async function writeFile(filePath, data) {
 
 const amountToTip = process.argv[2] ?? 18;
 
-const castsToTip = ["https://warpcast.com/alexk/0x76a2162f"];
+const castsToTip = ["https://warpcast.com/alexk/0xd7e7af36"];
 
 console.log({ castsToTip, amountToTip });
 
@@ -83,12 +83,11 @@ async function cast(data) {
         //   response.data.conversation.cast.direct_replies[0].direct_replies,
         // );
 
-        const directReplies =
+        let directReplies =
           response.data.conversation.cast.direct_replies.filter((r) => {
-            const shouldTip =
-              r.author.fid !== 14879 &&
-              !storedDB[castToTip + "-" + r.author.fid] &&
-              r.replies.count === 0;
+            const shouldTip = r.author.fid !== 14879 && !storedDB[r.author.fid];
+            // !storedDB[r.author.fid] &&
+            // r.replies.count === 0;
 
             const replyUrl = `https://warpcast.com/${r.author.username}/${r.hash.slice(0, 10)}`;
             console.log("check tip?", {
@@ -100,6 +99,9 @@ async function cast(data) {
             return shouldTip;
           });
 
+        directReplies = _.uniqBy(directReplies, "author.fid");
+        console.log(directReplies.length);
+
         // console.log(directReplies);
 
         for (let i = 0; i < directReplies.length; i++) {
@@ -108,11 +110,15 @@ async function cast(data) {
           console.log("tipping user", { fid: r.author.fid, replyUrl });
           await cast({
             // text: `🍖 x ${amountToTip} by /ak NAKAMA ◕ ◡ ◕`,
-            text: `${amountToTip} $DEGEN by /ak NAKAMA ◕ ◡ ◕`,
+            text: `Thank you for participating in ⚡️ CRACK THE CODE - Round #2 ⚡️
+Nobody guessed the correct code, so I'm tipping everyone who participated! 🎉
+99 $DEGEN sponsored by /ak ⚡️
+The answer btw was: 🟡🔵🟢🔴⚪🟠🟣
+https://chat.openai.com/share/ee9eb989-6da6-43cf-9c4f-e4349ad52f9b`,
             parent: r.hash,
           });
 
-          storedDB[castToTip + "-" + r.author.fid] = true;
+          storedDB[r.author.fid] = true;
           await writeFile(fileName, JSON.stringify(storedDB));
 
           console.log("wait 0.5 sec");

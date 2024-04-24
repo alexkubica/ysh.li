@@ -176,6 +176,54 @@ async function handleFarcastles(body: WebhookData) {
   return new NextResponse("done");
 }
 
+async function getDegenAllowance(fid: number): Promise<{
+  snapshot_date: string;
+  user_rank: string;
+  wallet_address: string;
+  avatar_url: string;
+  display_name: string;
+  tip_allowance: string;
+  remaining_allowance: string;
+}> {
+  try {
+    const response = await axios.get(
+      `https://www.degen.tips/api/airdrop2/tip-allowance?fid=${fid}`,
+    );
+    return response.data[0]; // Assuming the response data is what you're interested in
+  } catch (error) {
+    console.error("Error fetching data with Axios:", error);
+    throw error;
+  }
+}
+
+async function handleDegen(body: WebhookData) {
+  const cast_hash: string = body.data.hash;
+  const cast_author_fid: number = body.data.author.fid;
+  const text: string = body.data.text;
+
+  if (!text?.startsWith("/ak degen")) {
+    console.log("not /ak degen", { cast_hash, cast_author_fid, text });
+    return new NextResponse("not /ak degen");
+  }
+
+  console.log("/ak degen", { cast_hash, cast_author_fid, text });
+
+  // const kvId = "farcastles-attack-fid-" + cast_author_fid;
+  // const replied = (await kv.get<boolean>(kvId)) ?? false;
+
+  // console.log(`replied to user before?`, { cast_author_fid, replied, kvId });
+
+  const degenAllowance = await getDegenAllowance(cast_author_fid);
+
+  await cast({
+    text: `As of ${degenAllowance.snapshot_date} you rank #${degenAllowance.user_rank}, have an allowance of ${degenAllowance.tip_allowance} and ${degenAllowance.remaining_allowance} remaining.
+Follow /ak and @alexk ⚡️`,
+    parent: cast_hash,
+  });
+
+  return new NextResponse("done");
+}
+
 async function handleGame(body: WebhookData) {
   const AK_GAME_CAST_HASH = process.env.AK_GAME_CAST_HASH;
   if (
@@ -248,6 +296,9 @@ export async function POST(req: Request, context: { params: Params }) {
 
   let res: NextResponse;
   switch (context.params.kind) {
+    case "DEGEN":
+      res = await handleDegen(body);
+      break;
     case "FARCASTLES":
       res = await handleFarcastles(body);
       break;
