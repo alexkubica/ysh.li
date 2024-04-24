@@ -176,15 +176,18 @@ async function handleFarcastles(body: WebhookData) {
   return new NextResponse("done");
 }
 
-async function getDegenAllowance(fid: number): Promise<{
-  snapshot_date: string;
-  user_rank: string;
-  wallet_address: string;
-  avatar_url: string;
-  display_name: string;
-  tip_allowance: string;
-  remaining_allowance: string;
-}> {
+async function getDegenAllowance(fid: number): Promise<
+  | {
+      snapshot_date: string;
+      user_rank: string;
+      wallet_address: string;
+      avatar_url: string;
+      display_name: string;
+      tip_allowance: string;
+      remaining_allowance: string;
+    }
+  | undefined
+> {
   try {
     const response = await axios.get(
       `https://www.degen.tips/api/airdrop2/tip-allowance?fid=${fid}`,
@@ -224,11 +227,26 @@ async function handleDegen(body: WebhookData) {
 
   const degenAllowance = await getDegenAllowance(cast_author_fid);
 
-  await cast({
-    text: `As of ${degenAllowance.snapshot_date} you rank #${degenAllowance.user_rank}, have an allowance of ${degenAllowance.tip_allowance} and ${degenAllowance.remaining_allowance} remaining.
+  let comment = "";
+  if (cast_author_fid !== 14879) {
+    comment = "You can use the command again in a hour.";
+  }
+
+  if (!degenAllowance) {
+    await cast({
+      text: `Looks like you don't have any allowance, please head to https://www.degen.tips.
+${comment}
 Follow /ak and @alexk ⚡️`,
-    parent: cast_hash,
-  });
+      parent: cast_hash,
+    });
+  } else {
+    await cast({
+      text: `As of ${degenAllowance.snapshot_date} you rank #${degenAllowance.user_rank}, have an allowance of ${degenAllowance.tip_allowance} and ${degenAllowance.remaining_allowance} remaining.
+${comment}
+Follow /ak and @alexk ⚡️`,
+      parent: cast_hash,
+    });
+  }
 
   if (cast_author_fid !== 14879) {
     // cache replied for 1h
