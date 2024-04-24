@@ -189,6 +189,7 @@ async function getDegenAllowance(fid: number): Promise<{
     const response = await axios.get(
       `https://www.degen.tips/api/airdrop2/tip-allowance?fid=${fid}`,
     );
+    console.log("degen allowance fetched", { fid, data: response.data });
     return response.data[0]; // Assuming the response data is what you're interested in
   } catch (error) {
     console.error("Error fetching data with Axios:", error);
@@ -207,11 +208,6 @@ async function handleDegen(body: WebhookData) {
   }
 
   console.log("/ak degen", { cast_hash, cast_author_fid, text });
-
-  // const kvId = "farcastles-attack-fid-" + cast_author_fid;
-  // const replied = (await kv.get<boolean>(kvId)) ?? false;
-
-  // console.log(`replied to user before?`, { cast_author_fid, replied, kvId });
 
   const degenAllowance = await getDegenAllowance(cast_author_fid);
 
