@@ -38,27 +38,34 @@ async function handler(req: NextRequest, res: NextResponse) {
             },
           },
           async authorize(credentials) {
-            const {
-              body: { csrfToken },
-            } = req as unknown as NextApiRequest;
-            console.log("csrfToken", csrfToken);
+            const csrfToken = (credentials as any).csrfToken as string;
+            console.log("csrfToken", { csrfToken, credentials });
 
             const appClient = createAppClient({
               ethereum: viemConnector(),
             });
 
-            const verifyResponse = await appClient.verifySignInMessage({
+            const toVerify = {
               message: credentials?.message as string,
               signature: credentials?.signature as `0x${string}`,
               domain: "ysh.li",
               nonce: csrfToken,
-            });
+            };
+
+            const verifyResponse =
+              await appClient.verifySignInMessage(toVerify);
             const { success, fid } = verifyResponse;
 
             if (!success) {
-              console.error("Failed to verify signature", { fid, credentials });
+              console.error("Failed to verify signature", {
+                fid,
+                credentials,
+                toVerify,
+              });
               return null;
             }
+
+            console.log("verified signature", { fid, credentials });
 
             return {
               id: fid.toString(),
