@@ -37,11 +37,6 @@ async function cast(data: { text: string; parent: string }) {
   }
 }
 
-function roundToTwo(num: number) {
-  // @ts-ignore
-  return +(Math.round(num + "e+2") + "e-2");
-}
-
 export async function POST(req: NextRequest, res: NextResponse) {
   console.log("entered /tip/api POST route");
 
@@ -100,18 +95,18 @@ export async function POST(req: NextRequest, res: NextResponse) {
     directReplies = _.uniqBy(directReplies, "author.fid");
     console.log(directReplies.length);
 
-    const tipAmount = roundToTwo(body.amount! / directReplies.length);
+    const tipAmount = Math.floor(body.amount! / directReplies.length);
+
+    const text = `Have a degenful day 🎩
+You're receiving ${tipAmount} $DEGEN out of ${body.amount} split among ${directReplies.length} repliers in this cast.
+Sponsored by /ak ⚡️ 
+🔔 Notifications ON 🔔`;
+    console.log(text);
 
     for (let i = 0; i < directReplies.length; i++) {
       const r = directReplies[i];
       const replyUrl = `https://warpcast.com/${r.author.username}/${r.hash.slice(0, 10)}`;
       console.log("tipping user", { fid: r.author.fid, replyUrl });
-      const text = `Have a degenful day 🎩
-You're receiving ${tipAmount} $DEGEN out of ${body.amount} tip pool split among ${directReplies.length} repliers in this cast.
-Sponsored by /ak ⚡️ 
-🔔 Notifications ON 🔔`;
-
-      console.log(text);
 
       await cast({
         text,
@@ -120,7 +115,8 @@ Sponsored by /ak ⚡️
     }
 
     return new NextResponse(
-      `done, split ${body.amount} among ${directReplies.length} users`,
+      `split ${body.amount} among ${directReplies.length} users
+each got ${tipAmount} $DEGEN`,
     );
   } catch (error) {
     console.error(error);

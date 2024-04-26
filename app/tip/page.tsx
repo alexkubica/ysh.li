@@ -110,8 +110,9 @@ function Profile() {
     });
 
     if (res.ok) {
-      console.log("cast tipped successfully ⚡️");
-      window.alert("cast tipped successfully ⚡️");
+      const serverResponse = await res.text();
+      window.alert(`cast tipped successfully ⚡️
+server: ${serverResponse}`);
     } else {
       window.alert("there was an error with tipping");
     }
