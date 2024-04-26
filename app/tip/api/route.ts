@@ -1,6 +1,6 @@
+import { authOptions } from "@/app/auth";
 import { getServerSession } from "next-auth/next";
 import { NextRequest, NextResponse } from "next/server";
-import { authOptions } from "../../api/auth/[...nextauth]/route";
 
 require("dotenv").config({
   path: [".env.local", ".env", ".env.development.local"],
