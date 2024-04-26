@@ -39,7 +39,6 @@ async function handler(req: NextRequest, res: NextResponse) {
           },
           async authorize(credentials) {
             const csrfToken = (credentials as any).csrfToken as string;
-            console.log("csrfToken", { csrfToken, credentials });
 
             const appClient = createAppClient({
               ethereum: viemConnector(),
@@ -65,12 +64,14 @@ async function handler(req: NextRequest, res: NextResponse) {
               return null;
             }
 
-            console.log("verified signature", { fid, credentials });
+            console.log("verified signature", { fid, credentials, toVerify });
 
             return {
               id: fid.toString(),
               name: credentials?.name,
               image: credentials?.pfp,
+              message: credentials?.message as string,
+              signature: credentials?.signature as `0x${string}`,
             };
           },
         }),

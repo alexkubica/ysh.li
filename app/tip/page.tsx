@@ -48,6 +48,15 @@ export default function HomePage() {
   useEffect(() => {
     async function loadSession() {
       const loadedSession = await getSession();
+      if (loadedSession?.expires) {
+        // signIn("credentials", {
+        //   message: (session?.user as any)?.message,
+        //   signature: (session?.user as any)?.signature,
+        //   name: session?.user?.name,
+        //   pfp: session?.user?.image,
+        //   redirect: false,
+        // });
+      }
       setSession(loadedSession);
     }
 
@@ -87,11 +96,15 @@ export default function HomePage() {
 }
 
 function Profile() {
-  const { data: session } = useSession();
+  const { status, data } = useSession();
 
-  return session ? (
+  if (status === "loading") return <p>Loading...</p>;
+
+  if (status === "unauthenticated") return <p>Not signed in</p>;
+
+  return data ? (
     <div style={{ fontFamily: "sans-serif" }}>
-      <p>Signed in as {session.user?.name}</p>
+      <p>Signed in as {data.user?.name}</p>
       <p>
         <button
           type="button"
