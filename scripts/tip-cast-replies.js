@@ -31,9 +31,16 @@ async function writeFile(filePath, data) {
   }
 }
 
-const amountToTip = process.argv[2] ?? 18;
+const amountToTip = process.argv[2] ?? 10;
 
-const castsToTip = ["https://warpcast.com/alexk/0xd7e7af36"];
+const castsToTip = {
+  ham: ["https://warpcast.com/alexk/0x360acbd5"],
+  degen: [
+    "https://warpcast.com/alexk/0x570beb1c",
+    "https://warpcast.com/alexk/0xcbe25ee1",
+    "https://warpcast.com/alexk/0x810b7559",
+  ],
+};
 
 console.log({ castsToTip, amountToTip });
 
@@ -65,8 +72,8 @@ async function cast(data) {
 }
 
 (async function () {
-  for (let i = 0; i < castsToTip.length; i++) {
-    const castToTip = castsToTip[i];
+  for (let i = 0; i < castsToTip.degen.length; i++) {
+    const castToTip = castsToTip.degen[i];
 
     const options = {
       method: "GET",
@@ -77,17 +84,14 @@ async function cast(data) {
     await axios
       .request(options)
       .then(async function (response) {
-        // console.log(response.data);
-        // console.log(response.data.conversation.cast.direct_replies);
-        // console.log(
-        //   response.data.conversation.cast.direct_replies[0].direct_replies,
-        // );
-
         let directReplies =
           response.data.conversation.cast.direct_replies.filter((r) => {
-            const shouldTip = r.author.fid !== 14879 && !storedDB[r.author.fid];
-            // !storedDB[r.author.fid] &&
-            // r.replies.count === 0;
+            const cacheId = castToTip + " " + r.author.fid;
+            // const cacheId = castToTip + " " + r.author.fid;
+            const shouldTip =
+              r.author.fid !== 14879 &&
+              !storedDB[cacheId] &&
+              r.replies.count === 0;
 
             const replyUrl = `https://warpcast.com/${r.author.username}/${r.hash.slice(0, 10)}`;
             console.log("check tip?", {
@@ -102,23 +106,73 @@ async function cast(data) {
         directReplies = _.uniqBy(directReplies, "author.fid");
         console.log(directReplies.length);
 
-        // console.log(directReplies);
-
         for (let i = 0; i < directReplies.length; i++) {
           const r = directReplies[i];
+          const cacheId = castToTip + " " + r.author.fid;
           const replyUrl = `https://warpcast.com/${r.author.username}/${r.hash.slice(0, 10)}`;
           console.log("tipping user", { fid: r.author.fid, replyUrl });
           await cast({
-            // text: `🍖 x ${amountToTip} by /ak NAKAMA ◕ ◡ ◕`,
-            text: `Thank you for participating in ⚡️ CRACK THE CODE - Round #2 ⚡️
-Nobody guessed the correct code, so I'm tipping everyone who participated! 🎉
-99 $DEGEN sponsored by /ak ⚡️
-The answer btw was: 🟡🔵🟢🔴⚪🟠🟣
-https://chat.openai.com/share/ee9eb989-6da6-43cf-9c4f-e4349ad52f9b`,
+            text: `Have a degenful day 🎩
+${amountToTip} $DEGEN sponsored by /ak ⚡️`,
             parent: r.hash,
           });
 
-          storedDB[r.author.fid] = true;
+          storedDB[cacheId] = true;
+          await writeFile(fileName, JSON.stringify(storedDB));
+
+          console.log("wait 0.5 sec");
+          await sleep(500);
+        }
+      })
+      .catch(function (error) {
+        console.error(error);
+      });
+  }
+  for (let i = 0; i < castsToTip.ham.length; i++) {
+    const castToTip = castsToTip.ham[i];
+
+    const options = {
+      method: "GET",
+      url: `https://api.neynar.com/v2/farcaster/cast/conversation?identifier=${encodeURIComponent(castToTip)}&type=url&reply_depth=1&include_chronological_parent_casts=true`,
+      headers: { accept: "application/json", api_key: "NEYNAR_API_DOCS" },
+    };
+
+    await axios
+      .request(options)
+      .then(async function (response) {
+        let directReplies =
+          response.data.conversation.cast.direct_replies.filter((r) => {
+            const cacheId = castToTip + " " + r.author.fid;
+            const shouldTip =
+              r.author.fid !== 14879 &&
+              !storedDB[cacheId] &&
+              r.replies.count === 0;
+
+            const replyUrl = `https://warpcast.com/${r.author.username}/${r.hash.slice(0, 10)}`;
+            console.log("check tip?", {
+              replyUrl,
+              fid: r.author.fid,
+              shouldTip,
+            });
+
+            return shouldTip;
+          });
+
+        directReplies = _.uniqBy(directReplies, "author.fid");
+        console.log(directReplies.length);
+
+        for (let i = 0; i < directReplies.length; i++) {
+          const r = directReplies[i];
+          const cacheId = castToTip + " " + r.author.fid;
+          const replyUrl = `https://warpcast.com/${r.author.username}/${r.hash.slice(0, 10)}`;
+          console.log("tipping user", { fid: r.author.fid, replyUrl });
+          await cast({
+            text: `Have a hamderful day!
+🍖 x ${amountToTip} sponsored by /ak ⚡️`,
+            parent: r.hash,
+          });
+
+          storedDB[cacheId] = true;
           await writeFile(fileName, JSON.stringify(storedDB));
 
           console.log("wait 0.5 sec");

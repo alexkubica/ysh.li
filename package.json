@@ -13,6 +13,7 @@
     "**/*": "prettier --write --ignore-unknown"
   },
   "dependencies": {
+    "@farcaster/auth-kit": "^0.2.2",
     "@moralisweb3/next": "^2.25.4",
     "@tabler/icons-react": "^2.47.0",
     "@vercel/kv": "^1.0.1",
@@ -23,9 +24,11 @@
     "lodash": "^4.17.21",
     "moralis": "^2.25.4",
     "next": "14.1.0",
+    "next-auth": "^4.24.7",
     "node-emoji": "^2.1.3",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "viem": "^2.9.27"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.10",
