@@ -32,12 +32,13 @@ export default function HomePage() {
           <LinkButton url="https://wa.me/972526350655?text=%D7%94%D7%99%D7%99!%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%A0%D7%99%D7%99%D7%9F/%D7%AA%20%D7%91%D7%A2%D7%9E%D7%95%D7%93%20%D7%B4%D7%99%D7%A9.%D7%9C%D7%99%D7%B4%20:)">
             הזמינו עמוד ״יש.לי״ משלכם 🫵
           </LinkButton>
+          <LinkButton url="https://t.me/yshlinews">
+            חדשות ישראל בטלגרם 🗞️
+          </LinkButton>
 
-   
           <div className="prose ">
             <h4 className="pt-4">העמודים שלנו 🪪</h4>
           </div>
-     
 
           <LinkButton url="/alex">אלכס קוביצה - מייסד יש.לי 🤩</LinkButton>
           <LinkButton url="/nextjs">קהילת מפתחי Next.js 👨🏻‍💻</LinkButton>
@@ -45,15 +46,11 @@ export default function HomePage() {
           <LinkButton url="/yael">יעל מלינה 🌹</LinkButton>
           <LinkButton url="/liam">ליאם 👑</LinkButton>
 
-       <div className="prose ">
+          <div className="prose ">
             <h4 className="pt-4">מיוחדים 🤯</h4>
           </div>
           <LinkButton url="/mario">שחקו מריו קארט מהדפדפן 🎮</LinkButton>
-          <LinkButton url="https://t.me/yshlinews">
-            חדשות ישראל בטלגרם 🗞️
-          </LinkButton>
-
-   </div>
+        </div>
 
         <Footer />
       </div>
