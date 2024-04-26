@@ -17,6 +17,7 @@ import {
 } from "next-auth/react";
 import Head from "next/head";
 import { useCallback, useEffect, useState } from "react";
+import LinkButton from "../components/LinkButton";
 
 const config = {
   rpcUrl: "https://mainnet.optimism.io",
@@ -48,15 +49,6 @@ export default function HomePage() {
   useEffect(() => {
     async function loadSession() {
       const loadedSession = await getSession();
-      if (loadedSession?.expires) {
-        // signIn("credentials", {
-        //   message: (session?.user as any)?.message,
-        //   signature: (session?.user as any)?.signature,
-        //   name: session?.user?.name,
-        //   pfp: session?.user?.image,
-        //   redirect: false,
-        // });
-      }
       setSession(loadedSession);
     }
 
@@ -76,16 +68,22 @@ export default function HomePage() {
         <AuthKitProvider config={config}>
           <div>
             <div style={{ position: "fixed", top: "12px", right: "12px" }}>
-              <SignInButton
-                nonce={getNonce}
-                onSuccess={handleSuccess}
-                onError={() => setError(true)}
-                onSignOut={() => signOut()}
-              />
+              {session ? (
+                <LinkButton onClick={signOut} url={""}>
+                  sign out
+                </LinkButton>
+              ) : (
+                <SignInButton
+                  nonce={getNonce}
+                  onSuccess={handleSuccess}
+                  onError={() => setError(true)}
+                  onSignOut={() => signOut()}
+                />
+              )}
               {error && <div>Unable to sign in at this time.</div>}
             </div>
             <div style={{ paddingTop: "33vh", textAlign: "center" }}>
-              <h1>@farcaster/auth-kit + NextAuth</h1>
+              <h1>Tip comments on cast</h1>
               <Profile />
             </div>
           </div>
@@ -96,29 +94,71 @@ export default function HomePage() {
 }
 
 function Profile() {
+  const [amount, setAmount] = useState(10);
+  const [cast, setCast] = useState("https://warpcast.com/alexk/");
   const { status, data } = useSession();
+
+  const user = data?.user as { fid: string; fname: string; avatar: string };
+
+  const onSubmit = async () => {
+    const res = await fetch("/tip/api", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ cast, amount }),
+    });
+
+    if (res.ok) {
+      console.log("cast tipped successfully ⚡️");
+      window.alert("cast tipped successfully ⚡️");
+    } else {
+      window.alert("there was an error with tipping");
+    }
+  };
 
   if (status === "loading") return <p>Loading...</p>;
 
-  if (status === "unauthenticated") return <p>Not signed in</p>;
+  if (status === "unauthenticated" || !data)
+    return <p style={{ color: "red" }}>Not signed in</p>;
 
-  return data ? (
-    <div style={{ fontFamily: "sans-serif" }}>
-      <p>Signed in as {data.user?.name}</p>
-      <p>
-        <button
-          type="button"
-          style={{ padding: "6px 12px", cursor: "pointer" }}
-          onClick={() => signOut()}
-        >
-          Click here to sign out
-        </button>
-      </p>
+  if (user.fid !== "14879")
+    return <p>Only @alexk is authorized to use this page</p>;
+
+  return (
+    <div>
+      <p>Signed in as @{user.fname}</p>
+
+      <div className="label">
+        <span className="label-text">Enter a cast url</span>
+      </div>
+      <div>
+        <input
+          type="text"
+          className="input input-bordered w-full max-w-xs"
+          value={cast}
+          onChange={(e) => {
+            setCast(e.target.value);
+          }}
+        />
+      </div>
+      <div>
+        <div className="label">
+          <span className="label-text">Amount to split</span>
+        </div>
+        <input
+          className="input input-bordered w-full max-w-xs"
+          type="number"
+          value={amount}
+          onChange={(e) => {
+            setAmount(parseInt(e.target.value));
+          }}
+        />
+      </div>
+      <button onClick={onSubmit} className="btn btn-accent">
+        Tip comments on cast
+      </button>
+      <p></p>
     </div>
-  ) : (
-    <p>
-      Click the &quot;Sign in with Farcaster&quote; button above, then scan the
-      QR code to sign in.
-    </p>
   );
 }

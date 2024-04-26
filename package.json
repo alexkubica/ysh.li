@@ -28,7 +28,7 @@
     "node-emoji": "^2.1.3",
     "react": "^18",
     "react-dom": "^18",
-    "viem": "^2.9.27"
+    "viem": "^2.9.28"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.10",

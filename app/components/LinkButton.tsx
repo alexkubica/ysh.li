@@ -14,19 +14,22 @@ const convertChildrenToText = (children: any): string => {
 };
 
 export default function LinkButton({
+  onClick,
   children,
   url,
   dir = "rtl",
 }: {
   children: React.ReactNode;
-  url: string;
+  url?: string;
   dir?: "rtl" | "ltr";
+  onClick?: () => void;
 }) {
   const trackingId = convertChildrenToText(children).trim();
 
   return (
     <Link
-      href={url}
+      onClick={onClick}
+      href={url ?? "#"}
       className="w-full"
       dir={dir}
       id={trackingId}
