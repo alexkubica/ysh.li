@@ -82,7 +82,7 @@ export default function HomePage() {
               )}
               {error && <div>Unable to sign in at this time.</div>}
             </div>
-            <div style={{ paddingTop: "33vh", textAlign: "center" }}>
+            <div className="pt-24" style={{ textAlign: "center" }}>
               <h1>Tip comments on cast</h1>
               <Profile />
             </div>
@@ -96,25 +96,34 @@ export default function HomePage() {
 function Profile() {
   const [amount, setAmount] = useState(10);
   const [cast, setCast] = useState("https://warpcast.com/alexk/");
+  const [tipType, setTipType] = useState<"degen" | "ham">("degen");
   const { status, data } = useSession();
+  const [submitLoading, setSubmitLoading] = useState(false);
 
   const user = data?.user as { fid: string; fname: string; avatar: string };
 
   const onSubmit = async () => {
-    const res = await fetch("/tip/api", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ cast, amount }),
-    });
+    setSubmitLoading(true);
 
-    if (res.ok) {
-      const serverResponse = await res.text();
-      window.alert(`cast tipped successfully ⚡️
+    try {
+      const res = await fetch("/tip/api", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ cast, amount, tipType }),
+      });
+      if (res.ok) {
+        const serverResponse = await res.text();
+        window.alert(`cast tipped successfully ⚡️
 server: ${serverResponse}`);
-    } else {
+      } else {
+        window.alert("there was an error with tipping");
+      }
+    } catch (error) {
       window.alert("there was an error with tipping");
+    } finally {
+      setSubmitLoading(false);
     }
   };
 
@@ -127,7 +136,7 @@ server: ${serverResponse}`);
     return <p>Only @alexk is authorized to use this page</p>;
 
   return (
-    <div>
+    <div className="container mx-auto max-w-xs">
       <p>Signed in as @{user.fname}</p>
 
       <div className="label">
@@ -156,7 +165,45 @@ server: ${serverResponse}`);
           }}
         />
       </div>
-      <button onClick={onSubmit} className="btn btn-accent">
+
+      <div
+        className="form-control"
+        onClick={() => {
+          setTipType("degen");
+        }}
+      >
+        <label className="label cursor-pointer">
+          <span className="label-text">🎩 $DEGEN</span>
+          <input
+            type="radio"
+            name="radio-10"
+            className="radio checked:bg-purple-500"
+            checked={tipType === "degen"}
+          />
+        </label>
+      </div>
+      <div
+        className="form-control"
+        onClick={() => {
+          setTipType("ham");
+        }}
+      >
+        <label className="label cursor-pointer">
+          <span className="label-text">🍖 ham</span>
+          <input
+            type="radio"
+            name="radio-10"
+            checked={tipType === "ham"}
+            className="radio checked:bg-red-500"
+          />
+        </label>
+      </div>
+      <button
+        onClick={onSubmit}
+        className="btn btn-accent"
+        disabled={submitLoading}
+      >
+        {submitLoading && <span className="loading loading-spinner"></span>}
         Tip comments on cast
       </button>
       <p></p>

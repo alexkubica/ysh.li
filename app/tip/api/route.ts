@@ -58,6 +58,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
   const body = (await req.json()) as {
     cast: string | null;
     amount: number | null;
+    tipType: "degen" | "ham" | null;
   };
 
   if (!body?.cast) {
@@ -66,6 +67,10 @@ export async function POST(req: NextRequest, res: NextResponse) {
 
   if (!body?.amount) {
     throw new Error("no amount provided");
+  }
+
+  if (!body?.tipType) {
+    throw new Error("no tipType provided");
   }
 
   const options = {
@@ -82,7 +87,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
         const shouldTip = r.author.fid !== 14879 && r.replies.count === 0;
 
         const replyUrl = `https://warpcast.com/${r.author.username}/${r.hash.slice(0, 10)}`;
-        console.log("check tip?", {
+        console.log("should tip?", {
           replyUrl,
           fid: r.author.fid,
           shouldTip,
@@ -97,10 +102,22 @@ export async function POST(req: NextRequest, res: NextResponse) {
 
     const tipAmount = Math.floor(body.amount! / directReplies.length);
 
-    const text = `Have a degenful day 🎩
+    if (tipAmount < 1) {
+      throw new Error("tip amount too low");
+    }
+
+    let text = "";
+    if (body.tipType === "degen") {
+      text = `Have a degenful day 🎩
 You're receiving ${tipAmount} $DEGEN out of ${body.amount} split among ${directReplies.length} repliers in this cast.
 Sponsored by /ak ⚡️ 
-🔔 Notifications ON 🔔`;
+🔔 Follow & turn notifications ON 🔔`;
+    } else {
+      text = `Have a hamful day!
+You're receiving 🍖 x ${tipAmount} out of ${body.amount} split among ${directReplies.length} repliers in this cast.
+Sponsored by /ak ⚡️ 
+🔔 Follow & turn notifications ON 🔔`;
+    }
     console.log(text);
 
     for (let i = 0; i < directReplies.length; i++) {
@@ -114,10 +131,17 @@ Sponsored by /ak ⚡️
       });
     }
 
-    return new NextResponse(
-      `split ${body.amount} among ${directReplies.length} users
+    if (body.tipType === "degen") {
+      return new NextResponse(
+        `split ${body.amount} among ${directReplies.length} users
 each got ${tipAmount} $DEGEN`,
-    );
+      );
+    } else {
+      return new NextResponse(
+        `split ${body.amount} among ${directReplies.length} users
+each got 🍖 x ${tipAmount}`,
+      );
+    }
   } catch (error) {
     console.error(error);
   }
