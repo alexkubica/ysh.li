@@ -4,8 +4,20 @@ const nextConfig = {
   redirects: async () => {
     return [
       {
-        source: "/indie-tlv",
+        source: "/israeli-indie-hackers",
         destination: "https://docs.google.com/spreadsheets/d/1_pTq-q1tpP7xrQNmTn7KhmmVFNhpcsRQYhekkhH3SME/preview",
+        permanent: false,
+        basePath: false,
+      },
+      {
+        source: "/iii",
+        destination: "https://ysh.li/israeli-indie-hackers",
+        permanent: false,
+        basePath: false,
+      },
+      {
+        source: "/indie-tlv",
+        destination: "https://ysh.li/israeli-indie-hackers",
         permanent: false,
         basePath: false,
       },
