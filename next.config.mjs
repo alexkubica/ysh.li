@@ -4,6 +4,12 @@ const nextConfig = {
   redirects: async () => {
     return [
       {
+        source: "/indie-tlv",
+        destination: "https://docs.google.com/spreadsheets/d/1_pTq-q1tpP7xrQNmTn7KhmmVFNhpcsRQYhekkhH3SME/edit?gid=0#gid=0",
+        permanent: false,
+        basePath: false,
+      },
+      {
         source: "/r",
         destination:
           "https://zora.co/collect/base:0x6917816657cee0868d43abe1749b45e3cefa726c/premint-1?referrer=0xd81B7A2a1bBf3e1c713f2A5C886f88EE5f862417",
