@@ -5,7 +5,7 @@ const nextConfig = {
     return [
       {
         source: "/indie-tlv",
-        destination: "https://docs.google.com/spreadsheets/d/1_pTq-q1tpP7xrQNmTn7KhmmVFNhpcsRQYhekkhH3SME/edit?gid=0#gid=0",
+        destination: "https://docs.google.com/spreadsheets/d/1_pTq-q1tpP7xrQNmTn7KhmmVFNhpcsRQYhekkhH3SME/preview",
         permanent: false,
         basePath: false,
       },
