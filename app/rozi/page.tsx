@@ -17,7 +17,7 @@ export default function HomePage() {
   return (
     <>
       <Head>
-        <title>רוזי קוביצה</title>
+        <title>רוזי קוביצה יועצת נדל״ן</title>
       </Head>
       <div
         data-theme="rozi"
