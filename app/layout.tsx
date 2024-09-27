@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
 import Head from "next/head";
 import Script from "next/script";
@@ -48,6 +49,7 @@ export default function RootLayout({
             className="hidden invisible"
           ></iframe>
         </noscript>
+        <Analytics />
         {children}
       </body>
     </html>
