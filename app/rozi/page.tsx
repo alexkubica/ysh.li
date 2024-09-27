@@ -176,7 +176,7 @@ export default function HomePage() {
             <div className="flex justify-center">
               <a href="https://www.linkedin.com/in/rozikubica/">
                 <div className="group flex flex-col items-center gap-4 w-fit">
-                  <div className="size-28 bg-[#4058DD] group-hover:bg-blue-400 rounded-full shadow-xl">
+                  <div className="size-28 bg-[#0D63BC] group-hover:bg-blue-400 rounded-full shadow-xl">
                     <FaLinkedinIn className="w-full h-full p-8 text-white" />
                   </div>
                   <div className="group-hover:text-blue-500">לינקדאין</div>
@@ -186,7 +186,7 @@ export default function HomePage() {
             <div className="flex justify-center">
               <a href="https://www.instagram.com/rozi_kubica">
                 <div className="group flex flex-col items-center gap-4 w-fit">
-                  <div className="size-28 bg-[#4058DD] group-hover:bg-blue-400 rounded-full shadow-xl">
+                  <div className="size-28 bg-[#B22BA5] group-hover:bg-blue-400 rounded-full shadow-xl">
                     <FaInstagram className="w-full h-full p-8 text-white" />
                   </div>
                   <div className="group-hover:text-blue-500">אינסטגרם</div>
@@ -196,7 +196,7 @@ export default function HomePage() {
             <div className="flex justify-center">
               <a href="https://www.tiktok.com/@rozi.kubica.realestate">
                 <div className="group flex flex-col items-center gap-4 w-fit">
-                  <div className="size-28 bg-[#4058DD] group-hover:bg-blue-400 rounded-full shadow-xl">
+                  <div className="size-28 bg-black group-hover:bg-blue-400 rounded-full shadow-xl">
                     <FaTiktok className="w-full h-full p-8 text-white" />
                   </div>
                   <div className="group-hover:text-blue-500">טיקטוק</div>
