@@ -2,10 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-html,
-body {
-  min-height: 100vh;
-  direction: r;
+@layer base {
+  html,
+  body {
+    min-height: 100vh;
+    direction: r;
+
+    /* @apply container w-full m-0 p-0; */
+  }
 }
 
 :root {

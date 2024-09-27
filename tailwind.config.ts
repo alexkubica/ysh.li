@@ -10,6 +10,11 @@ const config: Config = {
   daisyui: {
     themes: [
       {
+        rozi: {
+          "primary-content": "#000",
+          "base-100": "#4058DD",
+          "base-content": "#000",
+        },
         alex: {
           ...require("daisyui/src/theming/themes")["light"],
           primary: "#5763DB",

@@ -18,7 +18,6 @@ export default function RootLayout({
       <Head>
         <link rel="icon" href="/images/logo.png" type="image/png" />
       </Head>
-      {/*  kubica change google analytics project name */}
       <Script id="google-tag-manager">
         {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
