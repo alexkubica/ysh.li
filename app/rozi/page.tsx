@@ -40,11 +40,11 @@ export default function HomePage() {
               מומלץ לשפץ את הדירה אם יש צורך, כדי להציג אותה בצורה הטובה ביותר.
             </li>
             <li className="relative before:absolute before:right-[-1.5rem] before:text-[#4058DD] before:content-['3. ']">
-              הערכת שווי דירה:חשוב לבצע סקר שוק מקיף כדי להבין את רמות ההיצע
+              הערכת שווי דירה: חשוב לבצע סקר שוק מקיף כדי להבין את רמות ההיצע
               והביקוש באזור ולתמחר את הדירה בהתאם.
             </li>
             <li className="relative before:absolute before:right-[-1.5rem] before:text-[#4058DD] before:content-['4.']">
-              שיווק הדירה:יש לבנות תוכנית שיווקית הכוללת פרסום במדיות שונות כמו
+              שיווק הדירה: יש לבנות תוכנית שיווקית הכוללת פרסום במדיות שונות כמו
               אתרי אינטרנט, רשתות חברתיות ועיתונות. חשוב לצלם תמונות איכותיות
               ולכתוב תוכן שיווקי שימשוך קונים פוטנציאליים.
             </li>
@@ -186,7 +186,7 @@ export default function HomePage() {
             <div className="flex justify-center">
               <a href="https://www.instagram.com/rozi_kubica">
                 <div className="group flex flex-col items-center gap-4 w-fit">
-                  <div className="size-28 bg-[#B22BA5] group-hover:bg-blue-400 rounded-full shadow-xl">
+                  <div className="size-28 bg-[#B22BA5] group-hover:bg-pink-400 rounded-full shadow-xl">
                     <FaInstagram className="w-full h-full p-8 text-white" />
                   </div>
                   <div className="group-hover:text-blue-500">אינסטגרם</div>
@@ -196,7 +196,7 @@ export default function HomePage() {
             <div className="flex justify-center">
               <a href="https://www.tiktok.com/@rozi.kubica.realestate">
                 <div className="group flex flex-col items-center gap-4 w-fit">
-                  <div className="size-28 bg-black group-hover:bg-blue-400 rounded-full shadow-xl">
+                  <div className="size-28 bg-black group-hover:bg-gray-400 rounded-full shadow-xl">
                     <FaTiktok className="w-full h-full p-8 text-white" />
                   </div>
                   <div className="group-hover:text-blue-500">טיקטוק</div>
