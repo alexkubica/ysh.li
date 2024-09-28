@@ -6,6 +6,7 @@ import {
   FaWhatsapp,
 } from "react-icons/fa";
 import { TiSocialFacebook } from "react-icons/ti";
+import Footer from "../components/Footer";
 export const metadata = {
   title: 'יש.לי - רוזי קוביצה יועצת נדל"ן',
 };
@@ -16,7 +17,7 @@ export default function HomePage() {
       data-theme="rozi"
       className="bg-[#4058DD] font-sans max-w-screen-md w-full text-center mx-auto p-0 m-0  text-xl md:text-xl font-bold"
     >
-      <div className="mt-8 pt-4 bg-white flex flex-col gap-4  px-4 mb-8">
+      <div className="mt-8 pt-4 bg-white flex flex-col gap-4  px-4">
         <div className="p-0 m-0 line-clamp-2 md:line-clamp-1 w-full mx-auto font-extrabold text-xl">
           החלטתם למכור את הבית שלכם, שיהיה בשעה טובה!
         </div>
@@ -197,6 +198,9 @@ export default function HomePage() {
             </a>
           </div>
         </div>
+      </div>
+      <div className="text-white">
+        <Footer />
       </div>
     </div>
   );
