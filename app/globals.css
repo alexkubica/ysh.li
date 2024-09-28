@@ -6,9 +6,6 @@
   html,
   body {
     min-height: 100vh;
-    direction: r;
-
-    @apply container w-full m-0 p-0;
   }
 }
 
