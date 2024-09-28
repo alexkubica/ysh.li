@@ -17,7 +17,6 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "יש.לי - אלכס קוביצה",
-  // description: "...",
 };
 
 export default function HomePage() {
@@ -36,6 +35,9 @@ export default function HomePage() {
           <div className="prose text-center">
             <h2>אלכס קוביצה</h2>
             <div className="prose text-center">מייסד יש.לי.</div>
+            <div className="prose text-center">
+              מתכנת בסטארטאפ בתחום הקריפטו.
+            </div>
             <div className="prose text-center pt-4">
               <LinkButton
                 // btnType="accent"
@@ -55,7 +57,10 @@ export default function HomePage() {
               url="https://t.me/alexkubica"
             />
             <IconButton icon={<IconMail />} url="mailto:me@alexkubica.com" />
-            <IconButton icon={<IconBrandX />} url="https://x.com/alexkubica_" />
+            <IconButton
+              icon={<IconBrandX />}
+              url="https://x.com/alexkubicail"
+            />
             <IconButton
               icon={<IconBrandLinkedin />}
               url="https://www.linkedin.com/in/alexkubica/"
@@ -87,14 +92,9 @@ export default function HomePage() {
           </LinkButton>
 
           <LinkButton url="/nextjs">
-            הצטרפו למעל 300 החברים בקהילת הווטסאפ של Next.js!
+            הצטרפו ל-390 החברים בקהילת הווטסאפ של Next.js!
           </LinkButton>
 
-          <LinkButton url="https://monday.com/careers">
-            משרות ב-monday.com
-            <br />
-            ניתן להגיש קורות חיים דרכי בכל אחת מהרשתות החברתיות
-          </LinkButton>
           <LinkButton url="https://www.linkedin.com/posts/alexkubica_the-30-most-common-software-engineer-behavioral-activity-7042481956399292419-ufyY?utm_source=share&utm_medium=member_desktop">
             מתראיינים למשרת פיתוח? הפוסט הזה בשבילכם 🫵
           </LinkButton>
@@ -106,16 +106,16 @@ export default function HomePage() {
             <h4>קבוצות ווטסאפ</h4>
           </div>
 
-          <LinkButton url="http://bit.ly/snc-cofounders">
+          <LinkButton url="/founders">
             חיפוש שותפים ופאונדרים לסטארטאפ
             <br />
-            (106 חברים)
+            (157 חברים)
           </LinkButton>
 
-          <LinkButton url="http://bit.ly/dev-memes">
+          <LinkButton url="/dev-memes">
             מימז למתכנתים
             <br />
-            (50 חברים)
+            (57 חברים)
           </LinkButton>
 
           <LinkButton url="http://bit.ly/tailwind-il">

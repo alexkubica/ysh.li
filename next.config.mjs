@@ -4,8 +4,21 @@ const nextConfig = {
   redirects: async () => {
     return [
       {
+        source: "/dev-memes",
+        destination: "https://chat.whatsapp.com/KqYbOUZ2kCU3PnI2iZCOgp",
+        permanent: false,
+        basePath: false,
+      },
+      {
+        source: "/founders",
+        destination: "https://chat.whatsapp.com/LZpjFKWUIwA9kp8fGypiJM",
+        permanent: false,
+        basePath: false,
+      },
+      {
         source: "/israeli-indie-hackers",
-        destination: "https://docs.google.com/spreadsheets/d/1_pTq-q1tpP7xrQNmTn7KhmmVFNhpcsRQYhekkhH3SME/preview",
+        destination:
+          "https://docs.google.com/spreadsheets/d/1_pTq-q1tpP7xrQNmTn7KhmmVFNhpcsRQYhekkhH3SME/preview",
         permanent: false,
         basePath: false,
       },

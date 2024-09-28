@@ -7,7 +7,7 @@ import {
 } from "react-icons/fa";
 import { TiSocialFacebook } from "react-icons/ti";
 export const metadata = {
-  title: 'רוזי קוביצה יועצת נדל"ן',
+  title: 'יש.לי - רוזי קוביצה יועצת נדל"ן',
 };
 
 export default function HomePage() {
