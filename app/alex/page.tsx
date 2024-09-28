@@ -34,7 +34,7 @@ export default function HomePage() {
           </div>
           <div className="prose text-center">
             <h2>אלכס קוביצה</h2>
-            <div className="prose text-center">מייסד יש.לי.</div>
+            <div className="prose text-center">יזם. מייסד יש.לי.</div>
             <div className="prose text-center">
               מתכנת בסטארטאפ בתחום הקריפטו.
             </div>
