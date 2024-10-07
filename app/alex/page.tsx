@@ -34,18 +34,8 @@ export default function HomePage() {
           </div>
           <div className="prose text-center">
             <h2>אלכס קוביצה</h2>
-            <div className="prose text-center">יזם. מייסד יש.לי.</div>
-            <div className="prose text-center">
-              מתכנת בסטארטאפ בתחום הקריפטו.
-            </div>
-            <div className="prose text-center pt-4">
-              <LinkButton
-                // btnType="accent"
-                url="https://wa.me/972526350655?text=%D7%94%D7%99%D7%99!%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%A0%D7%99%D7%99%D7%9F/%D7%AA%20%D7%91%D7%A2%D7%9E%D7%95%D7%93%20%D7%B4%D7%99%D7%A9.%D7%9C%D7%99%D7%B4%20:)"
-              >
-                הזמינו עמוד ״יש.לי״ משלכם בחינם לזמן מוגבל!
-              </LinkButton>
-            </div>
+            <div className="prose text-center">יזם, מתכנת ופרילנסר.</div>
+            <div className="prose text-center">בונה דפי נחיתה ואתרים.</div>
           </div>
           <div className="flex flex-wrap gap-4 justify-center pb-4">
             <IconButton
@@ -65,10 +55,10 @@ export default function HomePage() {
               icon={<IconBrandLinkedin />}
               url="https://www.linkedin.com/in/alexkubica/"
             />
-            <IconButton
+            {/*<IconButton
               icon={<IconBrandThreads />}
               url="https://www.threads.net/@alex_kubica"
-            />
+            />*/}
             <IconButton
               icon={<IconBrandFacebook />}
               url="https://www.facebook.com/mralexkubica"
@@ -81,10 +71,18 @@ export default function HomePage() {
               icon={<IconBrandTiktok />}
               url="https://tiktok.com/@alexkubica"
             />
-            <IconButton
+            {/*<IconButton
               icon={<IconBrandYoutube />}
               url="https://www.youtube.com/@alexkubica"
-            />
+            />*/}
+          </div>
+          <div className="animate-bounce w-full">
+            <LinkButton
+              type="accent"
+              url="https://api.whatsapp.com/send/?phone=972526350655&text=%D7%94%D7%99%D7%99%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%A0%D7%99%D7%99%D7%A0/%D7%AA%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%90%D7%AA%D7%A8%20%F0%9F%99%82&type=phone_number&app_absent=0"
+            >
+              קבלו בווטסאפ הצעת מחיר לאתר!
+            </LinkButton>
           </div>
 
           <LinkButton url="https://www.authentix.co.il/">
@@ -95,11 +93,34 @@ export default function HomePage() {
             הצטרפו ל-390 החברים בקהילת הווטסאפ של Next.js!
           </LinkButton>
 
+          <div className="prose text-center pt-4">
+            <h4>פוסטים</h4>
+          </div>
+
           <LinkButton url="https://www.linkedin.com/posts/alexkubica_the-30-most-common-software-engineer-behavioral-activity-7042481956399292419-ufyY?utm_source=share&utm_medium=member_desktop">
-            מתראיינים למשרת פיתוח? הפוסט הזה בשבילכם 🫵
+            איך להתראיין למשרות פיתוח
+          </LinkButton>
+
+          <div className="prose text-center pt-4">
+            <h4>קבוצות פייסבוק</h4>
+          </div>
+          <LinkButton url="https://www.facebook.com/groups/startupnation.co">
+            startupnation.co הייטק | סטארטאפים | יזמות | עסקים | משרות
+          </LinkButton>
+          <LinkButton url="https://www.facebook.com/groups/182109844949250/">
+            חיפוש קבוצות לווטסאפ
+          </LinkButton>
+          <LinkButton
+            dir="ltr"
+            url="https://www.facebook.com/groups/tailwindil/"
+          >
+            Tailwind CSS Israel 🇮🇱 קהילת הטיילווינד הגדולה בישראל
           </LinkButton>
           <LinkButton url="https://www.facebook.com/groups/hagapetot">
-            קבוצת הג׳פטות בפייסבוק - בינה מלאכותית
+            הג׳פטות - יוצרים ובונים עם בינה מלאכותית
+          </LinkButton>
+          <LinkButton url="https://www.facebook.com/groups/894999355278314/">
+            Beat Saber Israel | ביט סייבר ישראל | VR | משחקי קצב
           </LinkButton>
 
           <div className="prose text-center pt-4">
@@ -137,7 +158,7 @@ export default function HomePage() {
           </LinkButton>
 
           <div className="prose text-center pt-4">
-            <h4>פרויקטים</h4>
+            <h4>פרויקטים ומיזמים</h4>
           </div>
 
           <LinkButton url="https://ysh.li">
