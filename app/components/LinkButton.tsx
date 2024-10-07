@@ -37,7 +37,9 @@ export default function LinkButton({
       id={trackingId}
       data-track="link"
     >
-      <button className={`btn btn-${type} w-full`}>{children}</button>
+      {/* kubica fix bug */}
+      {/*<button className={`btn btn-${type} w-full`}>{children}</button>*/}
+      <button className={`btn btn-primary w-full`}>{children}</button>
     </Link>
   );
 }
