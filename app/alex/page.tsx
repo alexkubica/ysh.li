@@ -34,8 +34,8 @@ export default function HomePage() {
           </div>
           <div className="prose text-center">
             <h2>אלכס קוביצה</h2>
-            <div className="prose text-center">יזם, מתכנת ופרילנסר.</div>
-            <div className="prose text-center">בונה דפי נחיתה ואתרים.</div>
+            <div className="prose text-center">תתקנו את הכסף, תתקנו את העולם - ביטקוין.</div>
+            <div className="prose text-center">מתכנת בסטארטאפ.</div>
           </div>
           <div className="flex flex-wrap gap-4 justify-center pb-4">
             <IconButton
@@ -81,7 +81,7 @@ export default function HomePage() {
               type="accent"
               url="https://api.whatsapp.com/send/?phone=972526350655&text=%D7%94%D7%99%D7%99%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%A0%D7%99%D7%99%D7%A0/%D7%AA%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%90%D7%AA%D7%A8%20%F0%9F%99%82&type=phone_number&app_absent=0"
             >
-              קבלו בווטסאפ הצעת מחיר לאתר!
+              קבלו הצעת מחיר בווטסאפ
             </LinkButton>
           </div>
 
@@ -90,7 +90,7 @@ export default function HomePage() {
           </LinkButton>
 
           <LinkButton url="/nextjs">
-            הצטרפו ל-390 החברים בקהילת הווטסאפ של Next.js!
+            קהילת Next.js
           </LinkButton>
 
           <div className="prose text-center pt-4">
@@ -130,13 +130,13 @@ export default function HomePage() {
           <LinkButton url="/founders">
             חיפוש שותפים ופאונדרים לסטארטאפ
             <br />
-            (157 חברים)
+            (177 חברים)
           </LinkButton>
 
           <LinkButton url="/dev-memes">
             מימז למתכנתים
             <br />
-            (57 חברים)
+            (56 חברים)
           </LinkButton>
 
           <LinkButton url="http://bit.ly/tailwind-il">
@@ -162,10 +162,10 @@ export default function HomePage() {
           </div>
 
           <LinkButton url="https://ysh.li">
-            יש.לי - עמוד אישי לביו שלכם
+            יש.לי
           </LinkButton>
           <LinkButton url="https://www.authentix.co.il/">
-            אתר וויקס לאותנטיקס ישראל
+            אותנטיקס ישראל
           </LinkButton>
           <LinkButton url="https://www.spatial.io/s/Art-Gallery-by-Diana-Later-63e951b0de17b1be4948ef18?share=4910015432438267508">
             גלריית מטאברס ל-DL`Art
