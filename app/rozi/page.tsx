@@ -87,27 +87,124 @@ export default function HomePage() {
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 items-center md:px-16 border-b-8 border-[#4058DD] pb-16">
           <div className="flex flex-col gap-4 text-center mx-auto w-full items-center">
-            <img className="size-32" src="images/home-1.png" />
+            <img className="size-32" src="images/rozi/home-1.png" />
             <div className="w-32 line-clamp-3">
               עבודה עם קהל מגוון של תושבי חוץ
             </div>
           </div>
           <div className="flex flex-col gap-4 text-center mx-auto w-full items-center">
-            <img className="size-32" src="images/home-2.png" />
+            <img className="size-32" src="images/rozi/home-2.png" />
             <div className="w-32 line-clamp-3">8 שנות נסיון במכירת נכסים</div>
           </div>
           <div className="flex flex-col gap-4 text-center mx-auto w-full items-center">
-            <img className="size-32" src="images/home-3.png" />
+            <img className="size-32" src="images/rozi/home-3.png" />
             <div className="w-32 line-clamp-3">ליווי משקיעים בקניה</div>
           </div>
           <div className="flex flex-col gap-4 text-center mx-auto w-full items-center">
-            <img className="size-32" src="images/home-4.png" />
+            <img className="size-32" src="images/rozi/home-4.png" />
             <div className="w-32 line-clamp-3">התמחות בעבודה עם משפרי דיור</div>
           </div>
         </div>
         <div className="flex flex-col gap-4 mt-16 items-center md:px-16 border-b-8 border-[#4058DD] pb-16 text-center">
           <div className="text-2xl">חלק מהנכסים שמכרתי לאחרונה:</div>
-          <img className="w-full sm:px-8" src="images/rozi/sold.png" />
+          {/* <img className="w-full sm:px-8" src="images/rozi/sold.png" /> */}
+          <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="relative">
+              <h1 className="absolute top-0 w-full bg-slate-100 bg-opacity-70 p-2">
+                אהוד מנור 6
+              </h1>
+              <img
+                className="w-full h-80 object-cover"
+                src="images/rozi/sold/אהוד מנור 6.jpeg"
+              />
+            </div>
+
+            <div className="relative">
+              <h1 className="absolute top-0 w-full bg-slate-100 bg-opacity-70 p-2">
+                אירוס הארגמן 70
+              </h1>
+              <img
+                className="w-full h-80 object-cover"
+                src="images/rozi/sold/אירוס הארגמן 70.jpeg"
+              />
+            </div>
+
+            <div className="relative">
+              <h1 className="absolute top-0 w-full bg-slate-100 bg-opacity-70 p-2">
+                אנקווה 9
+              </h1>
+              <img
+                className="w-full h-80 object-cover"
+                src="images/rozi/sold/אנקווה 9.jpeg"
+              />
+            </div>
+
+            <div className="relative">
+              <h1 className="absolute top-0 w-full bg-slate-100 bg-opacity-70 p-2">
+                בן צבי 108
+              </h1>
+              <img
+                className="w-full h-80 object-cover"
+                src="images/rozi/sold/בן צבי 108.jpeg"
+              />
+            </div>
+
+            <div className="relative">
+              <h1 className="absolute top-0 w-full bg-slate-100 bg-opacity-70 p-2">
+                גולדה מאיר 20
+              </h1>
+              <img
+                className="w-full h-80 object-cover"
+                src="images/rozi/sold/גולדה מאיר 20.jpeg"
+              />
+            </div>
+
+            <div className="relative">
+              <h1 className="absolute top-0 w-full bg-slate-100 bg-opacity-70 p-2">
+                זלמן שניאור 24
+              </h1>
+              <img
+                className="w-full h-80 object-cover"
+                src="images/rozi/sold/זלמן שניאור 24.jpeg"
+              />
+            </div>
+            <div className="relative">
+              <h1 className="absolute top-0 w-full bg-slate-100 bg-opacity-70 p-2">
+                חיים מגורי 5
+              </h1>
+              <img
+                className="w-full h-80 object-cover"
+                src="images/rozi/sold/חיים מגורי 5.jpeg"
+              />
+            </div>
+            <div className="relative">
+              <h1 className="absolute top-0 w-full bg-slate-100 bg-opacity-70 p-2">
+                מאיר עמית 8
+              </h1>
+              <img
+                className="w-full h-80 object-cover"
+                src="images/rozi/sold/מאיר עמית 8.jpeg"
+              />
+            </div>
+            <div className="relative">
+              <h1 className="absolute top-0 w-full bg-slate-100 bg-opacity-70 p-2">
+                נחל בניאס 5
+              </h1>
+              <img
+                className="w-full h-80 object-cover"
+                src="images/rozi/sold/נחל בניאס 5.jpeg"
+              />
+            </div>
+            <div className="relative">
+              <h1 className="absolute top-0 w-full bg-slate-100 bg-opacity-70 p-2">
+                נחל הבשור 41
+              </h1>
+              <img
+                className="w-full h-80 object-cover"
+                src="images/rozi/sold/נחל הבשור 41.jpeg"
+              />
+            </div>
+          </div>
         </div>
         <div className="text-4xl text-center mb-16  border-[#4058DD] mt-16 flex flex-col gap-2">
           <div>חושבים למכור את הבית?</div>
