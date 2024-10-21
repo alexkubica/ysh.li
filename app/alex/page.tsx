@@ -99,6 +99,22 @@ export default function HomePage() {
             <h4>פוסטים</h4>
           </div>
 
+          <LinkButton url="https://www.facebook.com/mralexkubica/posts/pfbid02WSQASx9Mz7iVHtXh3rdQ2TPWSFZ96XvF5TjAM9hsLmhv8BmHbQnCGdCkruQuARxol?__cft__[0]=AZW8O4TvGUMplsC1raVNN-vJel0CwZiDIn3igZwl5Df9r0vZhezX_qkEaI16pf2YGBWSZd3rmBJuFcqwWy7jVkZi1bvDwuKUbGH7sQVc7fY-cScQYhhXEKHTYqnj6WSEnrqx6JtrxsEKN2JarzqxwxlWAxBy6rzDjE5kqEHRDNDVI8f2IeW-CBf0H-bISBZdkjI&__tn__=%2CO%2CP-R">
+            Not your keys, not your coins
+          </LinkButton>
+
+          <LinkButton url="https://www.facebook.com/mralexkubica/posts/pfbid02MhfWoLXzWcC4AdMZT8fJncMWXSoHTTXFDyHLHsJeVvezTZshCSuaSTezDKcPDespl">
+            מהו ארנק קר ומה כדאי לדעת לדעת לפני שקונים אחד?
+          </LinkButton>
+
+          <LinkButton url="https://www.facebook.com/mralexkubica/posts/pfbid033Q2q5yrgQDVcUUiCSVLk7DHeYSNHJ1zBJJ5yimV2cB35XtkUpxVSVzrE4PNMmcMxl?__cft__[0]=AZWALhijl_ESvuq30QTPNdPL1siDQvvvMJvVnb8Pe-IdmXjl3ZXGL2ZA1biRS2OAgxTZMxNuuqiSky1F7hrmlGYPepMSw4-laKZG5E3Oe23ZB1CCMhCOUmKjYZj3qFzk25DdFr4unxsEHgHUS0WjMG6qljmfXQitVwBZDjz5VC59HahKWKcZmqNDb_KeELAiAn8&__tn__=%2CO%2CP-R">
+            מהן עמלות גז בבלוקצ׳יין ולמה הן נחוצות?
+          </LinkButton>
+
+          <LinkButton url="https://www.facebook.com/mralexkubica/posts/pfbid024SePSvGrv683Hmt9j9bRAXsoq7nEmbWSkebmXLFS4ihsE6yXmER6PpLwhwPUPk4Kl?__cft__[0]=AZXrs0Ig-ii8TvrqhHXTxmHYWFuq6zV7HxSayRafTHz650n4JOJ03HCae0l6LOZUwUXugUbbS5baEXJfcmwyptfuY_QkKImeEVrHdr2kH3ngu4LZ7g7FH0062hpE3TMCJphqWMfaQsgwKN5xdN-1qsOd5QrqnfFISl34xz1j21T15DwHfYOWr23VQPoiueulps0&__tn__=%2CO%2CP-R">
+            איך חסכתי לאמא שלי 2,040₪ על דף נחיתה
+          </LinkButton>
+
           <LinkButton url="https://www.linkedin.com/posts/alexkubica_the-30-most-common-software-engineer-behavioral-activity-7042481956399292419-ufyY?utm_source=share&utm_medium=member_desktop">
             איך להתראיין למשרות פיתוח
           </LinkButton>
@@ -127,6 +143,10 @@ export default function HomePage() {
           </div>
 
           <LinkButton url="/founders">חיפוש שותפים לסטארטאפ</LinkButton>
+
+          <LinkButton url="https://chat.whatsapp.com/Krydq44nLVW7eLresa2eer">
+            Next.js
+          </LinkButton>
 
           <LinkButton url="/dev-memes">מימז למתכנתים</LinkButton>
 

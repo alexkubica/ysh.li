@@ -27,8 +27,6 @@ export default function HomePage() {
 
           <LinkButton url="https://chat.whatsapp.com/Krydq44nLVW7eLresa2eer">
             קבוצת הווטסאפ שלנו
-            <br />
-            (390 חברים)
           </LinkButton>
           <LinkButton url="/alex">אלכס קוביצה - מייסד הקהילה</LinkButton>
           <div className="prose text-center pt-4">
