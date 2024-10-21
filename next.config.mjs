@@ -4,6 +4,30 @@ const nextConfig = {
   redirects: async () => {
     return [
       {
+        source: "/snc-fb",
+        destination: "https://www.facebook.com/groups/startupnation.co",
+        permanent: false,
+        basePath: false,
+      },
+      {
+        source: "/tailwind",
+        destination: "https://chat.whatsapp.com/HLNVVKLSm7Y2cnmge3yhDe",
+        permanent: false,
+        basePath: false,
+      },
+      {
+        source: "/tailwind-fb",
+        destination: "https://www.facebook.com/groups/tailwindil",
+        permanent: false,
+        basePath: false,
+      },
+      {
+        source: "/vim",
+        destination: "https://chat.whatsapp.com/IigLdaxxU2ZJxhyqFlbE10",
+        permanent: false,
+        basePath: false,
+      },
+      {
         source: "/dev-memes",
         destination: "https://chat.whatsapp.com/KqYbOUZ2kCU3PnI2iZCOgp",
         permanent: false,

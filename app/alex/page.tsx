@@ -34,7 +34,9 @@ export default function HomePage() {
           </div>
           <div className="prose text-center">
             <h2>אלכס קוביצה</h2>
-            <div className="prose text-center">תתקנו את הכסף, תתקנו את העולם - ביטקוין.</div>
+            <div className="prose text-center">
+              תקנו את הכסף, תקנו את העולם - ביטקוין.
+            </div>
             <div className="prose text-center">מתכנת בסטארטאפ.</div>
           </div>
           <div className="flex flex-wrap gap-4 justify-center pb-4">
@@ -81,17 +83,17 @@ export default function HomePage() {
               type="accent"
               url="https://api.whatsapp.com/send/?phone=972526350655&text=%D7%94%D7%99%D7%99%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%A0%D7%99%D7%99%D7%A0/%D7%AA%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%90%D7%AA%D7%A8%20%F0%9F%99%82&type=phone_number&app_absent=0"
             >
-              קבלו הצעת מחיר בווטסאפ
+              קבלו בווטסאפ הצעת מחיר לפרויקט
             </LinkButton>
           </div>
 
           <LinkButton url="https://www.authentix.co.il/">
-            אותנטיקס ישראל - צילום | תוכן | סושיאל | תדמית
+            אותנטיקס ישראל | הבית שלך בדיגיטל
+            <br />
+            צילום | תוכן | סושיאל | תדמית
           </LinkButton>
 
-          <LinkButton url="/nextjs">
-            קהילת Next.js
-          </LinkButton>
+          <LinkButton url="/nextjs">קהילת Next.js</LinkButton>
 
           <div className="prose text-center pt-4">
             <h4>פוסטים</h4>
@@ -104,16 +106,13 @@ export default function HomePage() {
           <div className="prose text-center pt-4">
             <h4>קבוצות פייסבוק</h4>
           </div>
-          <LinkButton url="https://www.facebook.com/groups/startupnation.co">
+          <LinkButton url="/snc-fb">
             startupnation.co הייטק | סטארטאפים | יזמות | עסקים | משרות
           </LinkButton>
           <LinkButton url="https://www.facebook.com/groups/182109844949250/">
             חיפוש קבוצות לווטסאפ
           </LinkButton>
-          <LinkButton
-            dir="ltr"
-            url="https://www.facebook.com/groups/tailwindil/"
-          >
+          <LinkButton dir="ltr" url="/tailwind-fb">
             Tailwind CSS Israel 🇮🇱 קהילת הטיילווינד הגדולה בישראל
           </LinkButton>
           <LinkButton url="https://www.facebook.com/groups/hagapetot">
@@ -129,50 +128,32 @@ export default function HomePage() {
 
           <LinkButton url="/founders">
             חיפוש שותפים ופאונדרים לסטארטאפ
-            <br />
-            (177 חברים)
           </LinkButton>
 
-          <LinkButton url="/dev-memes">
-            מימז למתכנתים
-            <br />
-            (56 חברים)
-          </LinkButton>
+          <LinkButton url="/dev-memes">מימז למתכנתים</LinkButton>
 
-          <LinkButton url="http://bit.ly/tailwind-il">
-            Tailwind CSS
-            <br />
-            (95 חברים)
-          </LinkButton>
+          <LinkButton url="/tailwind">Tailwind CSS</LinkButton>
 
-          <LinkButton url="http://bit.ly/vim-wa-he">
-            Vim :wq
-            <br />
-            (45 חברים)
-          </LinkButton>
+          <LinkButton url="/vim">Vim :wq</LinkButton>
 
           <LinkButton url="https://chat.whatsapp.com/G4Hb3uPDwJH5uEn4ILJKIx">
             XR | VR | AR | MR | Metaverse
-            <br />
-            (19 חברים)
           </LinkButton>
 
           <div className="prose text-center pt-4">
             <h4>פרויקטים ומיזמים</h4>
           </div>
 
-          <LinkButton url="https://ysh.li">
-            יש.לי
-          </LinkButton>
+          <LinkButton url="https://ysh.li">יש.לי</LinkButton>
           <LinkButton url="https://www.authentix.co.il/">
-            אותנטיקס ישראל
+            אתר וויקס לאותנטיקס ישראל
           </LinkButton>
           <LinkButton url="https://www.spatial.io/s/Art-Gallery-by-Diana-Later-63e951b0de17b1be4948ef18?share=4910015432438267508">
             גלריית מטאברס ל-DL`Art
           </LinkButton>
-          <LinkButton url="http://wemakegpts.live/">
+          {/* <LinkButton url="http://wemakegpts.live/">
             wemakegpts.live - הזמנת GPT מותאמת אישית
-          </LinkButton>
+          </LinkButton> */}
           <LinkButton url="https://linktr.ee/cherevotbarzel">
             מוקד חרבות ברזל
           </LinkButton>

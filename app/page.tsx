@@ -37,7 +37,7 @@ export default function HomePage() {
             <h4 className="pt-4">העמודים שלנו 🪪</h4>
           </div>
 
-          <LinkButton url="/alex">אלכס קוביצה - מייסד יש.לי 😎</LinkButton>
+          <LinkButton url="/alex">אלכס קוביצה</LinkButton>
           <LinkButton url="/rozi">רוזי קוביצה יועצת נדל&quot;ן 🏠</LinkButton>
           <LinkButton url="/nextjs">קהילת מפתחי Next.js 👨🏻‍💻</LinkButton>
           <LinkButton url="/ofek">🧞‍♂️ 💎 הזוג המשוגע 💎 🧞‍♂️</LinkButton>
