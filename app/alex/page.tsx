@@ -126,9 +126,7 @@ export default function HomePage() {
             <h4>קבוצות ווטסאפ</h4>
           </div>
 
-          <LinkButton url="/founders">
-            חיפוש שותפים ופאונדרים לסטארטאפ
-          </LinkButton>
+          <LinkButton url="/founders">חיפוש שותפים לסטארטאפ</LinkButton>
 
           <LinkButton url="/dev-memes">מימז למתכנתים</LinkButton>
 
