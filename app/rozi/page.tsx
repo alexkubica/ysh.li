@@ -222,6 +222,15 @@ export default function HomePage() {
                 src="images/rozi/sold/גולדה 16.jpeg"
               />
             </div>
+            <div className="relative">
+              <h1 className="absolute top-0 w-full bg-slate-100 bg-opacity-70 p-2">
+                יהודה הלוי 49
+              </h1>
+              <img
+                className="w-full h-80 object-cover"
+                src="images/rozi/sold/יהודה הלוי 49.jpeg"
+              />
+            </div>
           </div>
         </div>
         <div className="text-4xl text-center mb-16  border-[#4058DD] mt-16 flex flex-col gap-2">
