@@ -231,6 +231,79 @@ export default function HomePage() {
                 src="images/rozi/sold/יהודה הלוי 49.jpeg"
               />
             </div>
+
+            <div className="relative">
+              <h1 className="absolute top-0 w-full bg-slate-100 bg-opacity-70 p-2">
+                מוצקין 23
+              </h1>
+              <img
+                className="w-full h-80 object-cover"
+                src="images/rozi/sold/מוצקין 23.jpeg"
+              />
+            </div>
+            <div className="relative">
+              <h1 className="absolute top-0 w-full bg-slate-100 bg-opacity-70 p-2">
+                מוצקין 25
+              </h1>
+              <img
+                className="w-full h-80 object-cover"
+                src="images/rozi/sold/מוצקין 25.jpeg"
+              />
+            </div>
+            <div className="relative">
+              <h1 className="absolute top-0 w-full bg-slate-100 bg-opacity-70 p-2">
+                גרינבוים 13
+              </h1>
+              <img
+                className="w-full h-80 object-cover"
+                src="images/rozi/sold/גרינבוים 13.jpeg"
+              />
+            </div>
+            <div className="relative">
+              <h1 className="absolute top-0 w-full bg-slate-100 bg-opacity-70 p-2">
+                נחום 20
+              </h1>
+              <img
+                className="w-full h-80 object-cover"
+                src="images/rozi/sold/נחום 20.jpeg"
+              />
+            </div>
+            <div className="relative">
+              <h1 className="absolute top-0 w-full bg-slate-100 bg-opacity-70 p-2">
+                נחום 15
+              </h1>
+              <img
+                className="w-full h-80 object-cover"
+                src="images/rozi/sold/נחום 15.jpeg"
+              />
+            </div>
+            <div className="relative">
+              <h1 className="absolute top-0 w-full bg-slate-100 bg-opacity-70 p-2">
+                לוי אשכול 7
+              </h1>
+              <img
+                className="w-full h-80 object-cover"
+                src="images/rozi/sold/לוי אשכול 7.jpeg"
+              />
+            </div>
+            <div className="relative">
+              <h1 className="absolute top-0 w-full bg-slate-100 bg-opacity-70 p-2">
+                לוי אשכול 19
+              </h1>
+              <img
+                className="w-full h-80 object-cover"
+                src="images/rozi/sold/לוי אשכול 19.jpeg"
+              />
+            </div>
+            <div className="relative">
+              <h1 className="absolute top-0 w-full bg-slate-100 bg-opacity-70 p-2">
+                לוי אשכול 27
+              </h1>
+              <img
+                className="w-full h-80 object-cover"
+                src="images/rozi/sold/לוי אשכול 27.jpeg"
+              />
+            </div>
           </div>
         </div>
         <div className="text-4xl text-center mb-16  border-[#4058DD] mt-16 flex flex-col gap-2">
