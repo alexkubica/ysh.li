@@ -7,13 +7,12 @@ import {
   IconBrandTiktok,
   IconBrandWhatsapp,
   IconBrandX,
-  IconBrandYoutube,
   IconMail,
 } from "@tabler/icons-react";
+import { Metadata } from "next";
+import Footer from "../components/Footer";
 import IconButton from "../components/IconButton";
 import LinkButton from "../components/LinkButton";
-import Footer from "../components/Footer";
-import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "יש.לי - אלכס קוביצה",
@@ -57,10 +56,10 @@ export default function HomePage() {
               icon={<IconBrandLinkedin />}
               url="https://www.linkedin.com/in/alexkubica/"
             />
-            {/*<IconButton
+            <IconButton
               icon={<IconBrandThreads />}
               url="https://www.threads.net/@alex_kubica"
-            />*/}
+            />
             <IconButton
               icon={<IconBrandFacebook />}
               url="https://www.facebook.com/mralexkubica"
@@ -73,10 +72,6 @@ export default function HomePage() {
               icon={<IconBrandTiktok />}
               url="https://tiktok.com/@alexkubica"
             />
-            {/*<IconButton
-              icon={<IconBrandYoutube />}
-              url="https://www.youtube.com/@alexkubica"
-            />*/}
           </div>
           <div className="animate-bounce w-full">
             <LinkButton
@@ -142,6 +137,8 @@ export default function HomePage() {
             <h4>קבוצות ווטסאפ</h4>
           </div>
 
+          <LinkButton url="/crypto">קריפטו</LinkButton>
+
           <LinkButton url="/founders">חיפוש שותפים לסטארטאפ</LinkButton>
 
           <LinkButton url="https://chat.whatsapp.com/Krydq44nLVW7eLresa2eer">
@@ -169,9 +166,6 @@ export default function HomePage() {
           <LinkButton url="https://www.spatial.io/s/Art-Gallery-by-Diana-Later-63e951b0de17b1be4948ef18?share=4910015432438267508">
             גלריית מטאברס ל-DL`Art
           </LinkButton>
-          {/* <LinkButton url="http://wemakegpts.live/">
-            wemakegpts.live - הזמנת GPT מותאמת אישית
-          </LinkButton> */}
           <LinkButton url="https://linktr.ee/cherevotbarzel">
             מוקד חרבות ברזל
           </LinkButton>

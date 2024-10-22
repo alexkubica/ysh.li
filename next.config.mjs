@@ -4,6 +4,12 @@ const nextConfig = {
   redirects: async () => {
     return [
       {
+        source: "/crypto",
+        destination: "https://chat.whatsapp.com/BOCjbjTY4rN6qEJ33bUNQk",
+        permanent: false,
+        basePath: false,
+      },
+      {
         source: "/snc-fb",
         destination: "https://www.facebook.com/groups/startupnation.co",
         permanent: false,
