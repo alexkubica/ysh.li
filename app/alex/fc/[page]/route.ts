@@ -41,14 +41,17 @@ const pages = [
   `,
 ];
 
-export async function POST(request: Request, context: { params: Params }) {
-  const pageMetadata = pages[context.params.page];
+export async function POST(
+  request: Request,
+  context: { params: Promise<Params> },
+) {
+  const pageMetadata = pages[(await context.params).page];
 
   return new NextResponse(`
     <!DOCTYPE html>
         <html>
             <head>
-                <title>Alex Kubica Frame Page #${context.params.page}</title>
+                <title>Alex Kubica Frame Page #${(await context.params).page}</title>
                 <meta property="og:image" content="${process.env.NEXT_PUBLIC_URL}/images/alex-avatar.png" />
                 <meta property="fc:frame" content="vNext" />
                 <meta property="fc:frame:image" content="${process.env.NEXT_PUBLIC_URL}/images/alex-avatar.png" />

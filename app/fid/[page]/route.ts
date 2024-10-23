@@ -5,7 +5,10 @@ type Params = {
   page: number;
 };
 
-export async function POST(request: NextRequest, context: { params: Params }) {
+export async function POST(
+  request: NextRequest,
+  context: { params: Promise<Params> },
+) {
   // @ts-ignore
   const body = await request.json();
   const { fid } = body?.untrustedData ?? -1;
@@ -14,7 +17,7 @@ export async function POST(request: NextRequest, context: { params: Params }) {
     <!DOCTYPE html>
         <html>
             <head>
-                <title>What is my fid page #${context.params.page}</title>
+                <title>What is my fid page #${(await context.params).page}</title>
                 <meta property="og:image" content="${process.env.NEXT_PUBLIC_URL}/images/fc-avatar.png" />
                 <meta property="fc:frame" content="vNext" />
                 <meta property="fc:frame:image:aspect_ratio" content="1:1" />

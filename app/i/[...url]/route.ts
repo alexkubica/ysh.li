@@ -4,14 +4,23 @@ type Params = {
   url: string[];
 };
 
-export async function GET(request: Request, context: { params: Params }) {
-  console.log(context);
-  if (context.params.url[0] === "http:" || context.params.url[0] === "https:") {
+export async function GET(
+  request: Request,
+  context: { params: Promise<Params> },
+) {
+  console.log(
+    /* @next-codemod-error 'context' is passed as an argument. Any asynchronous properties of 'props' must be awaited when accessed. */
+    context,
+  );
+  if (
+    (await context.params).url[0] === "http:" ||
+    (await context.params).url[0] === "https:"
+  ) {
     // @ts-ignore
-    context.params.url[0] = context.params.url[0] + "/";
+    (await context.params).url[0] = (await context.params).url[0] + "/";
   }
 
-  const url = context.params.url.join("/");
+  const url = (await context.params).url.join("/");
 
   console.log(url);
 

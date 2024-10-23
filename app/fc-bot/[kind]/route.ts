@@ -319,18 +319,18 @@ async function handleGame(body: WebhookData) {
   return new NextResponse("done");
 }
 
-export async function POST(req: Request, context: { params: Params }) {
-  console.log("entered /fc-bot POST route", { params: context.params });
+export async function POST(req: Request, context: { params: Promise<Params> }) {
+  console.log("entered /fc-bot POST route", { params: await context.params });
 
   let body: WebhookData;
   try {
-    body = await getValidatedBody(req, context.params.kind);
+    body = await getValidatedBody(req, (await context.params).kind);
   } catch (error) {
     return new NextResponse("error validating body");
   }
 
   let res: NextResponse;
-  switch (context.params.kind) {
+  switch ((await context.params).kind) {
     case "DEGEN":
       res = await handleDegen(body);
       break;
