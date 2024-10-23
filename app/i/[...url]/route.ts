@@ -8,19 +8,12 @@ export async function GET(
   request: Request,
   context: { params: Promise<Params> },
 ) {
-  console.log(
-    /* @next-codemod-error 'context' is passed as an argument. Any asynchronous properties of 'props' must be awaited when accessed. */
-    context,
-  );
-  if (
-    (await context.params).url[0] === "http:" ||
-    (await context.params).url[0] === "https:"
-  ) {
-    // @ts-ignore
-    (await context.params).url[0] = (await context.params).url[0] + "/";
+  const params = await context.params;
+  if (params.url[0] === "http:" || params.url[0] === "https:") {
+    params.url[0] = params.url[0] + "/";
   }
 
-  const url = (await context.params).url.join("/");
+  const url = params.url.join("/");
 
   console.log(url);
 
