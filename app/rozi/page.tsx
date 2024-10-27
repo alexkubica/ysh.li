@@ -351,7 +351,7 @@ export default function HomePage() {
             </div>
             <div className="relative">
               <h1 className="absolute min-h-[5rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-2">
-                שד' בניימין 48
+                שד&apos; בניימין 48
               </h1>
               <img
                 className="w-full h-80 object-cover"
@@ -360,7 +360,7 @@ export default function HomePage() {
             </div>
             <div className="relative">
               <h1 className="absolute min-h-[5rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-2">
-                שד' בניימין 61
+                שד&apos; בניימין 61
               </h1>
               <img
                 className="w-full h-80 object-cover"
@@ -369,7 +369,7 @@ export default function HomePage() {
             </div>
             <div className="relative">
               <h1 className="absolute min-h-[5rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-2">
-                שד' בניימין 64
+                שד&apos; בניימין 64
               </h1>
               <img
                 className="w-full h-80 object-cover"
