@@ -1,4 +1,3 @@
-import Head from "next/head";
 import {
   FaInstagram,
   FaLinkedinIn,
@@ -7,6 +6,7 @@ import {
 } from "react-icons/fa";
 import { TiSocialFacebook } from "react-icons/ti";
 import Footer from "../components/Footer";
+import Image from "next/image";
 export const metadata = {
   title: 'יש.לי - רוזי קוביצה יועצת נדל"ן',
 };
@@ -65,7 +65,8 @@ export default function HomePage() {
         <div className="flex flex-col md:flex-row gap-4 mt-8  items-center md:px-16 border-b-8 border-[#4058DD] pb-16">
           <img
             className="w-full h-64max-w-screen-md md:max-w-64 hidden md:block"
-            src="images/rozi/profile-vertical.png"
+            src="/images/rozi/profile-vertical.png"
+            alt="פרופיל"
           />
           <div className="flex flex-col text-right self-start gap-4 px-8">
             <div className="p-0 m-0 w-full mx-auto text-[#4058DD] font-bold text-4xl text-right">
@@ -383,6 +384,33 @@ export default function HomePage() {
               <img
                 className="w-full h-80 object-cover"
                 src="images/rozi/sold/דיזנגוף 55.jpeg"
+              />
+            </div>
+            <div className="relative">
+              <h1 className="absolute min-h-[5rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-2">
+                הגרא 8
+              </h1>
+              <img
+                className="w-full h-80 object-cover"
+                src="images/rozi/sold/הגרא 8.jpeg"
+              />
+            </div>
+            <div className="relative">
+              <h1 className="absolute min-h-[5rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-2">
+                הקליר 7
+              </h1>
+              <img
+                className="w-full h-80 object-cover"
+                src="images/rozi/sold/הקליר 7.jpeg"
+              />
+            </div>
+            <div className="relative">
+              <h1 className="absolute min-h-[5rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-2">
+                רמב&quot;ם 24
+              </h1>
+              <img
+                className="w-full h-80 object-cover"
+                src="images/rozi/sold/רמב״ם 24.jpeg"
               />
             </div>
           </div>
