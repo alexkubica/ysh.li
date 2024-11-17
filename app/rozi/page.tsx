@@ -6,7 +6,6 @@ import {
 } from "react-icons/fa";
 import { TiSocialFacebook } from "react-icons/ti";
 import Footer from "../components/Footer";
-import Image from "next/image";
 export const metadata = {
   title: 'יש.לי - רוזי קוביצה יועצת נדל"ן',
 };
@@ -411,6 +410,69 @@ export default function HomePage() {
               <img
                 className="w-full h-80 object-cover"
                 src="images/rozi/sold/רמב״ם 24.jpeg"
+              />
+            </div>
+            <div className="relative">
+              <h1 className="absolute min-h-[5rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-2">
+                גולדה 10
+              </h1>
+              <img
+                className="w-full h-80 object-cover"
+                src="images/rozi/sold/גולדה 10.jpeg"
+              />
+            </div>
+            <div className="relative">
+              <h1 className="absolute min-h-[5rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-2">
+                חבצלת החוף 2
+              </h1>
+              <img
+                className="w-full h-80 object-cover"
+                src="images/rozi/sold/חבצלת החוף 2.jpeg"
+              />
+            </div>
+            <div className="relative">
+              <h1 className="absolute min-h-[5rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-2">
+                חבצלת החוף 6
+              </h1>
+              <img
+                className="w-full h-80 object-cover"
+                src="images/rozi/sold/חבצלת החוף 6.jpeg"
+              />
+            </div>
+            <div className="relative">
+              <h1 className="absolute min-h-[5rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-2">
+                חטיבת גבעתי 15
+              </h1>
+              <img
+                className="w-full h-80 object-cover"
+                src="images/rozi/sold/חטיבת גבעתי 15.jpeg"
+              />
+            </div>
+            <div className="relative">
+              <h1 className="absolute min-h-[5rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-2">
+                חיים מגורי 8
+              </h1>
+              <img
+                className="w-full h-80 object-cover"
+                src="images/rozi/sold/חיים מגורי 8.jpeg"
+              />
+            </div>
+            <div className="relative">
+              <h1 className="absolute min-h-[5rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-2">
+                קרן היסוד 12
+              </h1>
+              <img
+                className="w-full h-80 object-cover"
+                src="images/rozi/sold/קרן היסוד 12.jpeg"
+              />
+            </div>
+            <div className="relative">
+              <h1 className="absolute min-h-[5rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-2">
+                שיפר 6
+              </h1>
+              <img
+                className="w-full h-80 object-cover"
+                src="images/rozi/sold/שיפר 6.jpeg"
               />
             </div>
           </div>
