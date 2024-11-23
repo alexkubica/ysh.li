@@ -108,10 +108,13 @@ export default function HomePage() {
         <div className="flex flex-col gap-4 mt-16 items-center md:px-16 border-b-8 border-[#4058DD] pb-16 text-center">
           <div className="text-2xl">חלק מהנכסים שמכרתי לאחרונה:</div>
           {/* <img className="w-full sm:px-8" src="images/rozi/sold.png" /> */}
-          <div className="mt-8 grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-4">
+          <div className="mt-8 grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 gap-4">
             <div className="relative">
-              <h1 className="absolute min-h-[5rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-2">
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-1">
                 אהוד מנור 6
+              </h1>
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center bottom-0 w-full bg-slate-100 bg-opacity-70 p-1">
+                שכונת עיר ימים
               </h1>
               <img
                 className="w-full h-80 object-cover"
@@ -120,28 +123,11 @@ export default function HomePage() {
             </div>
 
             <div className="relative">
-              <h1 className="absolute min-h-[5rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-2">
-                אירוס הארגמן 70
-              </h1>
-              <img
-                className="w-full h-80 object-cover"
-                src="images/rozi/sold/אירוס הארגמן 70.jpeg"
-              />
-            </div>
-
-            <div className="relative">
-              <h1 className="absolute min-h-[5rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-2">
-                אנקווה 9
-              </h1>
-              <img
-                className="w-full h-80 object-cover"
-                src="images/rozi/sold/אנקווה 9.jpeg"
-              />
-            </div>
-
-            <div className="relative">
-              <h1 className="absolute min-h-[5rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-2">
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-1">
                 בן צבי 108
+              </h1>
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center bottom-0 w-full bg-slate-100 bg-opacity-70 p-1">
+                שכונת אגמים
               </h1>
               <img
                 className="w-full h-80 object-cover"
@@ -150,45 +136,11 @@ export default function HomePage() {
             </div>
 
             <div className="relative">
-              <h1 className="absolute min-h-[5rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-2">
-                גולדה מאיר 20
-              </h1>
-              <img
-                className="w-full h-80 object-cover"
-                src="images/rozi/sold/גולדה מאיר 20.jpeg"
-              />
-            </div>
-
-            <div className="relative">
-              <h1 className="absolute min-h-[5rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-2">
-                זלמן שניאור 24
-              </h1>
-              <img
-                className="w-full h-80 object-cover"
-                src="images/rozi/sold/זלמן שניאור 24.jpeg"
-              />
-            </div>
-            <div className="relative">
-              <h1 className="absolute min-h-[5rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-2">
-                חיים מגורי 5
-              </h1>
-              <img
-                className="w-full h-80 object-cover"
-                src="images/rozi/sold/חיים מגורי 5.jpeg"
-              />
-            </div>
-            <div className="relative">
-              <h1 className="absolute min-h-[5rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-2">
-                מאיר עמית 8
-              </h1>
-              <img
-                className="w-full h-80 object-cover"
-                src="images/rozi/sold/מאיר עמית 8.jpeg"
-              />
-            </div>
-            <div className="relative">
-              <h1 className="absolute min-h-[5rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-2">
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-1">
                 נחל בניאס 5
+              </h1>
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center bottom-0 w-full bg-slate-100 bg-opacity-70 p-1">
+                שכונת אגמים
               </h1>
               <img
                 className="w-full h-80 object-cover"
@@ -196,234 +148,36 @@ export default function HomePage() {
               />
             </div>
             <div className="relative">
-              <h1 className="absolute min-h-[5rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-2">
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-1">
                 נחל הבשור 41
+              </h1>
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center bottom-0 w-full bg-slate-100 bg-opacity-70 p-1">
+                שכונת אגמים
               </h1>
               <img
                 className="w-full h-80 object-cover"
                 src="images/rozi/sold/נחל הבשור 41.jpeg"
               />
             </div>
-            <div className="relative">
-              <h1 className="absolute min-h-[5rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-2">
-                גולדה 19
-              </h1>
-              <img
-                className="w-full h-80 object-cover"
-                src="images/rozi/sold/גולדה 19.jpeg"
-              />
-            </div>
-            <div className="relative">
-              <h1 className="absolute min-h-[5rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-2">
-                גולדה 16
-              </h1>
-              <img
-                className="w-full h-80 object-cover"
-                src="images/rozi/sold/גולדה 16.jpeg"
-              />
-            </div>
-            <div className="relative">
-              <h1 className="absolute min-h-[5rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-2">
-                יהודה הלוי 49
-              </h1>
-              <img
-                className="w-full h-80 object-cover"
-                src="images/rozi/sold/יהודה הלוי 49.jpeg"
-              />
-            </div>
 
             <div className="relative">
-              <h1 className="absolute min-h-[5rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-2">
-                מוצקין 23
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-1">
+                אירוס הארגמן 70
+              </h1>
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center bottom-0 w-full bg-slate-100 bg-opacity-70 p-1">
+                שכונת האירוסים
               </h1>
               <img
                 className="w-full h-80 object-cover"
-                src="images/rozi/sold/מוצקין 23.jpeg"
+                src="images/rozi/sold/אירוס הארגמן 70.jpeg"
               />
             </div>
             <div className="relative">
-              <h1 className="absolute min-h-[5rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-2">
-                מוצקין 25
-              </h1>
-              <img
-                className="w-full h-80 object-cover"
-                src="images/rozi/sold/מוצקין 25.jpeg"
-              />
-            </div>
-            <div className="relative">
-              <h1 className="absolute min-h-[5rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-2">
-                גרינבוים 13
-              </h1>
-              <img
-                className="w-full h-80 object-cover"
-                src="images/rozi/sold/גרינבוים 13.jpeg"
-              />
-            </div>
-            <div className="relative">
-              <h1 className="absolute min-h-[5rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-2">
-                נחום 20
-              </h1>
-              <img
-                className="w-full h-80 object-cover"
-                src="images/rozi/sold/נחום 20.jpeg"
-              />
-            </div>
-            <div className="relative">
-              <h1 className="absolute min-h-[5rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-2">
-                נחום 15
-              </h1>
-              <img
-                className="w-full h-80 object-cover"
-                src="images/rozi/sold/נחום 15.jpeg"
-              />
-            </div>
-            <div className="relative">
-              <h1 className="absolute min-h-[5rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-2">
-                לוי אשכול 7
-              </h1>
-              <img
-                className="w-full h-80 object-cover"
-                src="images/rozi/sold/לוי אשכול 7.jpeg"
-              />
-            </div>
-            <div className="relative">
-              <h1 className="absolute min-h-[5rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-2">
-                לוי אשכול 19
-              </h1>
-              <img
-                className="w-full h-80 object-cover"
-                src="images/rozi/sold/לוי אשכול 19.jpeg"
-              />
-            </div>
-            <div className="relative">
-              <h1 className="absolute min-h-[5rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-2">
-                לוי אשכול 27
-              </h1>
-              <img
-                className="w-full h-80 object-cover"
-                src="images/rozi/sold/לוי אשכול 27.jpeg"
-              />
-            </div>
-            <div className="relative">
-              <h1 className="absolute min-h-[5rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-2">
-                אלחריזי 16
-              </h1>
-              <img
-                className="w-full h-80 object-cover"
-                src="images/rozi/sold/אלחריזי 16.jpeg"
-              />
-            </div>
-            <div className="relative">
-              <h1 className="absolute min-h-[5rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-2">
-                רזיאל 25
-              </h1>
-              <img
-                className="w-full h-80 object-cover"
-                src="images/rozi/sold/רזיאל 25.jpeg"
-              />
-            </div>
-            <div className="relative">
-              <h1 className="absolute min-h-[5rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-2">
-                ויצמן 81
-              </h1>
-              <img
-                className="w-full h-80 object-cover"
-                src="images/rozi/sold/ויצמן 81.jpeg"
-              />
-            </div>
-            <div className="relative">
-              <h1 className="absolute min-h-[5rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-2">
-                ויצמן 51
-              </h1>
-              <img
-                className="w-full h-80 object-cover"
-                src="images/rozi/sold/ויצמן 51.jpeg"
-              />
-            </div>
-            <div className="relative">
-              <h1 className="absolute min-h-[5rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-2">
-                ויצמן 31
-              </h1>
-              <img
-                className="w-full h-80 object-cover"
-                src="images/rozi/sold/ויצמן 31.jpeg"
-              />
-            </div>
-            <div className="relative">
-              <h1 className="absolute min-h-[5rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-2">
-                שד&apos; בניימין 48
-              </h1>
-              <img
-                className="w-full h-80 object-cover"
-                src="images/rozi/sold/שד' בניימין 48.jpeg"
-              />
-            </div>
-            <div className="relative">
-              <h1 className="absolute min-h-[5rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-2">
-                שד&apos; בניימין 61
-              </h1>
-              <img
-                className="w-full h-80 object-cover"
-                src="images/rozi/sold/שד' בניימין 61.jpeg"
-              />
-            </div>
-            <div className="relative">
-              <h1 className="absolute min-h-[5rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-2">
-                שד&apos; בניימין 64
-              </h1>
-              <img
-                className="w-full h-80 object-cover"
-                src="images/rozi/sold/שד' בניימין 64.jpeg"
-              />
-            </div>
-            <div className="relative">
-              <h1 className="absolute min-h-[5rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-2">
-                דיזנגוף 55
-              </h1>
-              <img
-                className="w-full h-80 object-cover"
-                src="images/rozi/sold/דיזנגוף 55.jpeg"
-              />
-            </div>
-            <div className="relative">
-              <h1 className="absolute min-h-[5rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-2">
-                הגרא 8
-              </h1>
-              <img
-                className="w-full h-80 object-cover"
-                src="images/rozi/sold/הגרא 8.jpeg"
-              />
-            </div>
-            <div className="relative">
-              <h1 className="absolute min-h-[5rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-2">
-                הקליר 7
-              </h1>
-              <img
-                className="w-full h-80 object-cover"
-                src="images/rozi/sold/הקליר 7.jpeg"
-              />
-            </div>
-            <div className="relative">
-              <h1 className="absolute min-h-[5rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-2">
-                רמב&quot;ם 24
-              </h1>
-              <img
-                className="w-full h-80 object-cover"
-                src="images/rozi/sold/רמב״ם 24.jpeg"
-              />
-            </div>
-            <div className="relative">
-              <h1 className="absolute min-h-[5rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-2">
-                גולדה 10
-              </h1>
-              <img
-                className="w-full h-80 object-cover"
-                src="images/rozi/sold/גולדה 10.jpeg"
-              />
-            </div>
-            <div className="relative">
-              <h1 className="absolute min-h-[5rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-2">
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-1">
                 חבצלת החוף 2
+              </h1>
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center bottom-0 w-full bg-slate-100 bg-opacity-70 p-1">
+                שכונת האירוסים
               </h1>
               <img
                 className="w-full h-80 object-cover"
@@ -431,35 +185,48 @@ export default function HomePage() {
               />
             </div>
             <div className="relative">
-              <h1 className="absolute min-h-[5rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-2">
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-1">
                 חבצלת החוף 6
+              </h1>
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center bottom-0 w-full bg-slate-100 bg-opacity-70 p-1">
+                שכונת האירוסים
               </h1>
               <img
                 className="w-full h-80 object-cover"
                 src="images/rozi/sold/חבצלת החוף 6.jpeg"
               />
             </div>
+
             <div className="relative">
-              <h1 className="absolute min-h-[5rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-2">
-                חטיבת גבעתי 15
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-1">
+                אנקווה 9
+              </h1>
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center bottom-0 w-full bg-slate-100 bg-opacity-70 p-1  ">
+                שכ׳ קריית נורדאו
               </h1>
               <img
                 className="w-full h-80 object-cover"
-                src="images/rozi/sold/חטיבת גבעתי 15.jpeg"
+                src="images/rozi/sold/אנקווה 9.jpeg"
               />
             </div>
             <div className="relative">
-              <h1 className="absolute min-h-[5rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-2">
-                חיים מגורי 8
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-1">
+                זלמן שניאור 24
+              </h1>
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center bottom-0 w-full bg-slate-100 bg-opacity-70 p-1  ">
+                שכ׳ קריית נורדאו
               </h1>
               <img
                 className="w-full h-80 object-cover"
-                src="images/rozi/sold/חיים מגורי 8.jpeg"
+                src="images/rozi/sold/זלמן שניאור 24.jpeg"
               />
             </div>
             <div className="relative">
-              <h1 className="absolute min-h-[5rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-2">
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-1">
                 קרן היסוד 12
+              </h1>
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center bottom-0 w-full bg-slate-100 bg-opacity-70 p-1  ">
+                שכ׳ קריית נורדאו
               </h1>
               <img
                 className="w-full h-80 object-cover"
@@ -467,12 +234,366 @@ export default function HomePage() {
               />
             </div>
             <div className="relative">
-              <h1 className="absolute min-h-[5rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-2">
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-1">
                 שיפר 6
+              </h1>
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center bottom-0 w-full bg-slate-100 bg-opacity-70 p-1  ">
+                שכ׳ קריית נורדאו
               </h1>
               <img
                 className="w-full h-80 object-cover"
                 src="images/rozi/sold/שיפר 6.jpeg"
+              />
+            </div>
+            <div className="relative">
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-1">
+                גולדה 10
+              </h1>
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center bottom-0 w-full bg-slate-100 bg-opacity-70 p-1  ">
+                שכ׳ נאות גולדה
+              </h1>
+              <img
+                className="w-full h-80 object-cover"
+                src="images/rozi/sold/גולדה 10.jpeg"
+              />
+            </div>
+            <div className="relative">
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-1">
+                גולדה 16
+              </h1>
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center bottom-0 w-full bg-slate-100 bg-opacity-70 p-1  ">
+                שכ׳ נאות גולדה
+              </h1>
+              <img
+                className="w-full h-80 object-cover"
+                src="images/rozi/sold/גולדה 16.jpeg"
+              />
+            </div>
+            <div className="relative">
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-1">
+                גולדה 19
+              </h1>
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center bottom-0 w-full bg-slate-100 bg-opacity-70 p-1  ">
+                שכ׳ נאות גולדה
+              </h1>
+              <img
+                className="w-full h-80 object-cover"
+                src="images/rozi/sold/גולדה 19.jpeg"
+              />
+            </div>
+
+            <div className="relative">
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-1">
+                גולדה 20
+              </h1>
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center bottom-0 w-full bg-slate-100 bg-opacity-70 p-1  ">
+                שכ׳ נאות גולדה
+              </h1>
+              <img
+                className="w-full h-80 object-cover"
+                src="images/rozi/sold/גולדה מאיר 20.jpeg"
+              />
+            </div>
+            <div className="relative">
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-1">
+                חטיבת גבעתי 15
+              </h1>
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center bottom-0 w-full bg-slate-100 bg-opacity-70 p-1  ">
+                שכונת גלי ים
+              </h1>
+              <img
+                className="w-full h-80 object-cover"
+                src="images/rozi/sold/חטיבת גבעתי 15.jpeg"
+              />
+            </div>
+
+            <div className="relative">
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-1">
+                חיים מגורי 5
+              </h1>
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center bottom-0 w-full bg-slate-100 bg-opacity-70 p-1  ">
+                שכונת נאות שקד
+              </h1>
+              <img
+                className="w-full h-80 object-cover"
+                src="images/rozi/sold/חיים מגורי 5.jpeg"
+              />
+            </div>
+            <div className="relative">
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-1">
+                חיים מגורי 8
+              </h1>
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center bottom-0 w-full bg-slate-100 bg-opacity-70 p-1  ">
+                שכונת נאות שקד
+              </h1>
+              <img
+                className="w-full h-80 object-cover"
+                src="images/rozi/sold/חיים מגורי 8.jpeg"
+              />
+            </div>
+            <div className="relative">
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-1">
+                לוי אשכול 7
+              </h1>
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center bottom-0 w-full bg-slate-100 bg-opacity-70 p-1  ">
+                שכונת נאות שקד
+              </h1>
+              <img
+                className="w-full h-80 object-cover"
+                src="images/rozi/sold/לוי אשכול 7.jpeg"
+              />
+            </div>
+            <div className="relative">
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-1">
+                לוי אשכול 19
+              </h1>
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center bottom-0 w-full bg-slate-100 bg-opacity-70 p-1  ">
+                שכונת נאות שקד
+              </h1>
+              <img
+                className="w-full h-80 object-cover"
+                src="images/rozi/sold/לוי אשכול 19.jpeg"
+              />
+            </div>
+            <div className="relative">
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-1">
+                לוי אשכול 27
+              </h1>
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center bottom-0 w-full bg-slate-100 bg-opacity-70 p-1  ">
+                שכונת נאות שקד
+              </h1>
+              <img
+                className="w-full h-80 object-cover"
+                src="images/rozi/sold/לוי אשכול 27.jpeg"
+              />
+            </div>
+            <div className="relative">
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-1">
+                מוצקין 23
+              </h1>
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center bottom-0 w-full bg-slate-100 bg-opacity-70 p-1  ">
+                שכונת נאות שקד
+              </h1>
+              <img
+                className="w-full h-80 object-cover"
+                src="images/rozi/sold/מוצקין 23.jpeg"
+              />
+            </div>
+            <div className="relative">
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-1">
+                מוצקין 25
+              </h1>
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center bottom-0 w-full bg-slate-100 bg-opacity-70 p-1  ">
+                שכונת נאות שקד
+              </h1>
+              <img
+                className="w-full h-80 object-cover"
+                src="images/rozi/sold/מוצקין 25.jpeg"
+              />
+            </div>
+            <div className="relative">
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-1">
+                גרינבוים 13
+              </h1>
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center bottom-0 w-full bg-slate-100 bg-opacity-70 p-1  ">
+                שכונת נאות שקד
+              </h1>
+              <img
+                className="w-full h-80 object-cover"
+                src="images/rozi/sold/גרינבוים 13.jpeg"
+              />
+            </div>
+            <div className="relative">
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-1">
+                אלחריזי 16
+              </h1>
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center bottom-0 w-full bg-slate-100 bg-opacity-70 p-1  ">
+                שכונת רמת חן
+              </h1>
+              <img
+                className="w-full h-80 object-cover"
+                src="images/rozi/sold/אלחריזי 16.jpeg"
+              />
+            </div>
+            <div className="relative">
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-1">
+                הגרא 8
+              </h1>
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center bottom-0 w-full bg-slate-100 bg-opacity-70 p-1  ">
+                שכונת רמת חן
+              </h1>
+              <img
+                className="w-full h-80 object-cover"
+                src="images/rozi/sold/הגרא 8.jpeg"
+              />
+            </div>
+            <div className="relative">
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-1">
+                הקליר 7
+              </h1>
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center bottom-0 w-full bg-slate-100 bg-opacity-70 p-1  ">
+                שכונת רמת חן
+              </h1>
+              <img
+                className="w-full h-80 object-cover"
+                src="images/rozi/sold/הקליר 7.jpeg"
+              />
+            </div>
+            <div className="relative">
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-1">
+                מאיר עמית 8
+              </h1>
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center bottom-0 w-full bg-slate-100 bg-opacity-70 p-1  ">
+                שכונת רמת חן
+              </h1>
+              <img
+                className="w-full h-80 object-cover"
+                src="images/rozi/sold/מאיר עמית 8.jpeg"
+              />
+            </div>
+            <div className="relative">
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-1">
+                רמב&quot;ם 24
+              </h1>
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center bottom-0 w-full bg-slate-100 bg-opacity-70 p-1  ">
+                שכונת רמת חן
+              </h1>
+              <img
+                className="w-full h-80 object-cover"
+                src="images/rozi/sold/רמב״ם 24.jpeg"
+              />
+            </div>
+            <div className="relative">
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-1">
+                דיזנגוף 55
+              </h1>
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center bottom-0 w-full bg-slate-100 bg-opacity-70 p-1  ">
+                מרכז העיר
+              </h1>
+              <img
+                className="w-full h-80 object-cover"
+                src="images/rozi/sold/דיזנגוף 55.jpeg"
+              />
+            </div>
+            <div className="relative">
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-1">
+                ויצמן 31
+              </h1>
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center bottom-0 w-full bg-slate-100 bg-opacity-70 p-1  ">
+                מרכז העיר
+              </h1>
+              <img
+                className="w-full h-80 object-cover"
+                src="images/rozi/sold/ויצמן 31.jpeg"
+              />
+            </div>
+            <div className="relative">
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-1">
+                ויצמן 51
+              </h1>
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center bottom-0 w-full bg-slate-100 bg-opacity-70 p-1  ">
+                מרכז העיר
+              </h1>
+              <img
+                className="w-full h-80 object-cover"
+                src="images/rozi/sold/ויצמן 51.jpeg"
+              />
+            </div>
+            <div className="relative">
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-1">
+                ויצמן 81
+              </h1>
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center bottom-0 w-full bg-slate-100 bg-opacity-70 p-1  ">
+                מרכז העיר
+              </h1>
+              <img
+                className="w-full h-80 object-cover"
+                src="images/rozi/sold/ויצמן 81.jpeg"
+              />
+            </div>
+            <div className="relative">
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-1">
+                יהודה הלוי 49
+              </h1>
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center bottom-0 w-full bg-slate-100 bg-opacity-70 p-1  ">
+                מרכז העיר
+              </h1>
+              <img
+                className="w-full h-80 object-cover"
+                src="images/rozi/sold/יהודה הלוי 49.jpeg"
+              />
+            </div>
+            <div className="relative">
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-1">
+                שד&apos; בניימין 48
+              </h1>
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center bottom-0 w-full bg-slate-100 bg-opacity-70 p-1  ">
+                מרכז העיר
+              </h1>
+              <img
+                className="w-full h-80 object-cover"
+                src="images/rozi/sold/שד' בניימין 48.jpeg"
+              />
+            </div>
+            <div className="relative">
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-1">
+                שד&apos; בניימין 61
+              </h1>
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center bottom-0 w-full bg-slate-100 bg-opacity-70 p-1  ">
+                מרכז העיר
+              </h1>
+              <img
+                className="w-full h-80 object-cover"
+                src="images/rozi/sold/שד' בניימין 61.jpeg"
+              />
+            </div>
+            <div className="relative">
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-1">
+                שד&apos; בניימין 64
+              </h1>
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center bottom-0 w-full bg-slate-100 bg-opacity-70 p-1  ">
+                מרכז העיר
+              </h1>
+              <img
+                className="w-full h-80 object-cover"
+                src="images/rozi/sold/שד' בניימין 64.jpeg"
+              />
+            </div>
+            <div className="relative">
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-1">
+                רזיאל 25
+              </h1>
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center bottom-0 w-full bg-slate-100 bg-opacity-70 p-1  ">
+                מרכז העיר
+              </h1>
+              <img
+                className="w-full h-80 object-cover"
+                src="images/rozi/sold/רזיאל 25.jpeg"
+              />
+            </div>
+            <div className="relative">
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-1">
+                נחום 15
+              </h1>
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center bottom-0 w-full bg-slate-100 bg-opacity-70 p-1  ">
+                שכ׳ רמת ידין
+              </h1>
+              <img
+                className="w-full h-80 object-cover"
+                src="images/rozi/sold/נחום 15.jpeg"
+              />
+            </div>
+
+            <div className="relative">
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-1">
+                נחום 20
+              </h1>
+              <h1 className="absolute min-h-[3rem] flex items-center justify-center bottom-0 w-full bg-slate-100 bg-opacity-70 p-1  ">
+                שכ׳ רמת ידין
+              </h1>
+              <img
+                className="w-full h-80 object-cover"
+                src="images/rozi/sold/נחום 20.jpeg"
               />
             </div>
           </div>
