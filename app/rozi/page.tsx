@@ -108,7 +108,7 @@ export default function HomePage() {
         <div className="flex flex-col gap-4 mt-16 items-center md:px-16 border-b-8 border-[#4058DD] pb-16 text-center">
           <div className="text-2xl">חלק מהנכסים שמכרתי לאחרונה:</div>
           {/* <img className="w-full sm:px-8" src="images/rozi/sold.png" /> */}
-          <div className="mt-8 grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 gap-4">
+          <div className="mt-8 grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
             <div className="relative">
               <h1 className="absolute min-h-[3rem] flex items-center justify-center top-0 w-full bg-slate-100 bg-opacity-70 p-1">
                 אהוד מנור 6
