@@ -15,7 +15,7 @@ import IconButton from "../components/IconButton";
 import LinkButton from "../components/LinkButton";
 
 export const metadata: Metadata = {
-  title: "יש.לי - אלכס קוביצה",
+  title: "Alex Kubica ₿ אלכס קוביצה",
 };
 
 export default function HomePage() {
@@ -32,10 +32,7 @@ export default function HomePage() {
             </div>
           </div>
           <div className="prose text-center">
-            <h2>אלכס קוביצה</h2>
-            <div className="prose text-center">
-              תקנו את הכסף, תקנו את העולם - ביטקוין.
-            </div>
+            <h2 dir="ltr">Alex Kubica ₿ אלכס קוביצה</h2>
             <div className="prose text-center">מתכנת בסטארטאפ.</div>
           </div>
           <div className="flex flex-wrap gap-4 justify-center pb-4">
@@ -115,27 +112,14 @@ export default function HomePage() {
           </LinkButton>
 
           <div className="prose text-center pt-4">
-            <h4>קבוצות פייסבוק</h4>
-          </div>
-          <LinkButton url="/snc-fb">
-            startupnation.co הייטק | סטארטאפים | יזמות | עסקים | משרות
-          </LinkButton>
-          <LinkButton url="https://www.facebook.com/groups/182109844949250/">
-            חיפוש קבוצות לווטסאפ
-          </LinkButton>
-          <LinkButton dir="ltr" url="/tailwind-fb">
-            Tailwind CSS Israel 🇮🇱 קהילת הטיילווינד הגדולה בישראל
-          </LinkButton>
-          <LinkButton url="https://www.facebook.com/groups/hagapetot">
-            הג׳פטות - יוצרים ובונים עם בינה מלאכותית
-          </LinkButton>
-          <LinkButton url="https://www.facebook.com/groups/894999355278314/">
-            Beat Saber Israel | ביט סייבר ישראל | VR | משחקי קצב
-          </LinkButton>
-
-          <div className="prose text-center pt-4">
             <h4>קבוצות ווטסאפ</h4>
           </div>
+
+          <LinkButton url="/dev-jobs">משרות מתכנת פולסטאק</LinkButton>
+
+          <LinkButton url="/management-jobs">
+            משרות ניהול, ראשי צוותים, הנהלה בכירה
+          </LinkButton>
 
           <LinkButton url="/crypto">קריפטו</LinkButton>
 
@@ -156,6 +140,25 @@ export default function HomePage() {
           </LinkButton>
 
           <div className="prose text-center pt-4">
+            <h4>קבוצות פייסבוק</h4>
+          </div>
+          <LinkButton url="/snc-fb">
+            startupnation.co הייטק | סטארטאפים | יזמות | עסקים | משרות
+          </LinkButton>
+          <LinkButton url="https://www.facebook.com/groups/182109844949250/">
+            חיפוש קבוצות לווטסאפ
+          </LinkButton>
+          <LinkButton dir="ltr" url="/tailwind-fb">
+            Tailwind CSS Israel 🇮🇱 קהילת הטיילווינד הגדולה בישראל
+          </LinkButton>
+          <LinkButton url="https://www.facebook.com/groups/hagapetot">
+            הג׳פטות - יוצרים ובונים עם בינה מלאכותית
+          </LinkButton>
+          <LinkButton url="https://www.facebook.com/groups/894999355278314/">
+            Beat Saber Israel | ביט סייבר ישראל | VR | משחקי קצב
+          </LinkButton>
+
+          <div className="prose text-center pt-4">
             <h4>פרויקטים ומיזמים</h4>
           </div>
 
@@ -165,6 +168,9 @@ export default function HomePage() {
           </LinkButton>
           <LinkButton url="https://www.spatial.io/s/Art-Gallery-by-Diana-Later-63e951b0de17b1be4948ef18?share=4910015432438267508">
             גלריית מטאברס ל-DL`Art
+          </LinkButton>
+          <LinkButton url="https://chimp.fun">
+            מחולל תמונות אישיות ל-NFT
           </LinkButton>
           <LinkButton url="https://linktr.ee/cherevotbarzel">
             מוקד חרבות ברזל

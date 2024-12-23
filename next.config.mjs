@@ -52,12 +52,6 @@ const nextConfig = {
         basePath: false,
       },
       {
-        source: "/founders",
-        destination: "https://chat.whatsapp.com/LZpjFKWUIwA9kp8fGypiJM",
-        permanent: false,
-        basePath: false,
-      },
-      {
         source: "/israeli-indie-hackers",
         destination:
           "https://docs.google.com/spreadsheets/d/1_pTq-q1tpP7xrQNmTn7KhmmVFNhpcsRQYhekkhH3SME/preview",
