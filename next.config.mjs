@@ -4,6 +4,18 @@ const nextConfig = {
   redirects: async () => {
     return [
       {
+        source: "/dev-jobs",
+        destination: "https://chat.whatsapp.com/JdzeWEOOWCNFqlVdRul8R4",
+        permanent: false,
+        basePath: false,
+      },
+      {
+        source: "/management-jobs",
+        destination: "https://chat.whatsapp.com/LhsVPc8BKXK3JnMfSWFRul",
+        permanent: false,
+        basePath: false,
+      },
+      {
         source: "/crypto",
         destination: "https://chat.whatsapp.com/BOCjbjTY4rN6qEJ33bUNQk",
         permanent: false,
