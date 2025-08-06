@@ -5,10 +5,10 @@ import path from 'path'
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { filename: string } }
+  { params }: { params: Promise<{ filename: string }> }
 ) {
   try {
-    const filename = params.filename
+    const { filename } = await params
     const tempDir = path.join(process.cwd(), 'temp')
     const filePath = path.join(tempDir, filename)
 

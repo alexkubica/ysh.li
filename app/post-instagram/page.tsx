@@ -130,7 +130,7 @@ export default function PostInstagram() {
           <ul className="list-disc list-inside space-y-1 text-sm">
             <li>Select an image or video file to upload</li>
             <li>Add an optional caption for your post</li>
-            <li>Click "Post to Instagram" to publish</li>
+            <li>Click &quot;Post to Instagram&quot; to publish</li>
             <li>Make sure your Instagram Business account is properly configured</li>
           </ul>
         </div>
