@@ -90,9 +90,10 @@ NEXT_PUBLIC_BASE_URL=https://yourdomain.com
 ```
 app/
 ├── post-instagram/
-│   ├── page.tsx          # Frontend upload interface
-│   └── route.ts          # API route for Instagram posting
+│   └── page.tsx          # Frontend upload interface
 └── api/
+    ├── post-instagram/
+    │   └── route.ts      # API route for Instagram posting
     └── temp/
         └── [filename]/
             └── route.ts   # Serves temporary uploaded files
@@ -113,7 +114,7 @@ app/
 
 ## API Endpoints
 
-### POST /post-instagram
+### POST /api/post-instagram
 Posts content to Instagram
 
 **Request**: FormData with:

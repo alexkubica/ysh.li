@@ -30,7 +30,7 @@ export default function PostInstagram() {
       formData.append('file', file)
       formData.append('caption', caption)
 
-      const response = await fetch('/post-instagram', {
+      const response = await fetch('/api/post-instagram', {
         method: 'POST',
         body: formData,
       })
